@@ -5,38 +5,33 @@
       class="fixed top-0 left-0 right-0 z-30 bg-white/40 backdrop-blur-sm border-b border-white/10"
     >
       <div
-        class="container mx-auto px-6 md:px-10 lg:px-5 py-4 flex items-center justify-between"
+        class="container mx-auto px-6 md:px-10 lg:px-5 py-2 flex items-center justify-between"
       >
-        <div class="flex items-center gap-4">
+        <div class="flex items-center">
           <img
             src="../assets/img/logo-fb.png"
             alt="Logo"
-            class="h-30 w-30 object-contain"
+            class="h-25 w-25 object-contain"
           />
         </div>
       </div>
     </header>
 
-    <main class="pt-24">
+    <main class="pt-20">
       <!-- Hero - centered card -->
-      <section id="hero" class="min-h-[60vh] flex items-center mt-9">
+      <section id="hero" class="min-h-[60vh] flex items-center">
         <div class="container mx-auto px-6 md:px-10 lg:px-20 py-12">
-          <div class="max-w-2xl mx-auto">
+          <div class="max-w-3xl mx-auto">
             <div
               class="bg-white rounded-2xl shadow-2xl p-8 md:p-12 text-center transform transition hover:shadow-[0_30px_60px_rgba(38,84,124,0.12)] animate-fade-in-up"
               style="border: 1px solid rgba(39, 52, 68, 0.06)"
             >
               <!-- Avatar & Contact -->
               <div class="relative mb-4">
-                <button
-                  class="absolute top-0 right-0 bg-gray-dark text-white px-4 py-2 rounded-full text-sm shadow-md hover:brightness-95 transition"
-                >
-                  Contactez-moi
-                </button>
                 <img
                   src="../assets/img/pp-fb.jpg"
                   alt="Logo"
-                  class="inline-flex items-center justify-center w-50 h-50 bg-blue text-white rounded-full mx-auto text-xl font-bold shadow-md"
+                  class="inline-flex items-center justify-center w-40 h-40 bg-blue text-white rounded-full mx-auto text-xl font-bold shadow-md"
                 />
               </div>
 
@@ -48,47 +43,57 @@
               <p class="text-lg text-gray mb-4">
                 Team lead | Développeur Full-stack | Chef de projet technique
               </p>
-              <p class="text-lg text-gray mb-4">
-                Je recherche continuellement à allier design, accessibilité et
-                performance pour répondre aux enjeux métiers des entreprises.
+              <p class="text-md text-gray mb-4">
+                Avec <b>7+ans</b> d’expérience dans l'industrie logicielle et
+                <b>3+ ans</b>
+                dans le développement web, j’accompagne les éditeurs dans la
+                conception et la réalisation de projets à fort impact.
+              </p>
+              <p class="text-md text-gray mb-4">
+                Actuellement
+                <b>Responsable du Développement Informatique</b> chez Likewatt,
+                je contribue à la transition numérique des acteurs des énergies
+                renouvelables en pilotant des projets logiciels stratégiques, de
+                la vision à l’exécution.
               </p>
 
               <!-- Compétences -->
-              <div class="mt-4 flex flex-wrap justify-center gap-3 mb-6">
-                <span
-                  class="px-3 py-1 rounded-full bg-gray/10 text-gray-dark text-xs font-medium"
-                  >HTML</span
+              <div class="mt-8 flex flex-wrap justify-center gap-3 mb-6">
+                <span class="px-3 py-1 rounded-full bg-blue text-white text-xs"
+                  >Full-Stack</span
                 >
-                <span
-                  class="px-3 py-1 rounded-full bg-gray/10 text-gray-dark text-xs font-medium"
-                  >CSS</span
+                <span class="px-3 py-1 rounded-full bg-blue text-white text-xs"
+                  >Full-Stack</span
                 >
-                <span
-                  class="px-3 py-1 rounded-full bg-gray/10 text-gray-dark text-xs font-medium"
-                  >Vue</span
+                <span class="px-3 py-1 rounded-full bg-blue text-white text-xs"
+                  >Typescript</span
                 >
-                <span
-                  class="px-3 py-1 rounded-full bg-gray/10 text-gray-dark text-xs font-medium"
-                  >Tailwind</span
+                <span class="px-3 py-1 rounded-full bg-blue text-white text-xs"
+                  >React</span
                 >
-                <span
-                  class="px-3 py-1 rounded-full bg-gray/10 text-gray-dark text-xs font-medium"
-                  >Figma</span
+                <span class="px-3 py-1 rounded-full bg-blue text-white text-xs"
+                  >Next.js</span
+                >
+                <span class="px-3 py-1 rounded-full bg-blue text-white text-xs"
+                  >Node.js</span
                 >
               </div>
 
-              <div class="flex items-center justify-center gap-4 mt-4">
+              <div class="flex items-center justify-center gap-4 mt-8">
                 <a
                   href="#projets"
+                  @click="onScrollToProjets"
                   class="inline-flex items-center gap-3 px-6 py-3 bg-pink text-white rounded-full shadow hover:scale-105 transition transform animate-pop"
                 >
                   Voir mes projets
                 </a>
                 <a
                   href="#competences"
+                  @click="onScrollToCompetences"
                   class="text-sm text-gray hover:text-blue transition"
-                  >Voir mes compétences →</a
                 >
+                  Voir mes compétences →
+                </a>
               </div>
             </div>
           </div>
@@ -98,7 +103,7 @@
       <!-- Projects -->
       <section
         id="projets"
-        class="container mx-auto px-6 md:px-10 lg:px-20 py-12 pt-[150px]"
+        class="container mx-auto px-6 md:px-10 lg:px-20 py-12 pt-[140px]"
       >
         <h2
           class="text-2xl md:text-3xl font-bold text-blue mb-8 animate-fade-in-up"
@@ -130,21 +135,24 @@
                 de 500 salaires analysés grâce au machine learning.
               </p>
               <div class="mt-4 flex flex-wrap gap-2 justify-center">
-                <span
-                  class="text-xs bg-blue text-white px-3 py-1 rounded-full font-medium"
+                <span class="text-xs bg-blue text-white px-3 py-1 rounded-full"
                   >Next.js</span
                 >
-                <span
-                  class="text-xs bg-green text-white px-3 py-1 rounded-full font-medium"
+                <span class="bg-green text-white px-3 py-1 rounded-full text-xs"
                   >Node.js</span
                 >
                 <span
-                  class="text-xs bg-orange text-gray-dark px-3 py-1 rounded-full font-medium"
+                  class="bg-orange text-gray-dark px-3 py-1 rounded-full text-xs"
                   >TensorFlow</span
                 >
               </div>
             </div>
-            <a class="absolute inset-0" href="#"></a>
+            <a
+              class="absolute inset-0"
+              href="https://simulator-rh.felixberger.fr/"
+              target="_blank"
+              rel="noopener noreferrer"
+            ></a>
           </article>
 
           <!-- Project B -->
@@ -171,17 +179,20 @@
                 >.
               </p>
               <div class="mt-4 flex flex-wrap gap-2 justify-center">
-                <span
-                  class="text-xs bg-pink text-white px-3 py-1 rounded-full font-medium"
+                <span class="text-xs bg-pink text-white px-3 py-1 rounded-full"
                   >Angular</span
                 >
-                <span
-                  class="text-xs bg-green text-white px-3 py-1 rounded-full font-medium"
+                <span class="text-xs bg-green text-white px-3 py-1 rounded-full"
                   >Node.js</span
                 >
               </div>
             </div>
-            <a class="absolute inset-0" href="#"></a>
+            <a
+              class="absolute inset-0"
+              href="https://dev-rh.felixberger.fr/"
+              target="_blank"
+              rel="noopener noreferrer"
+            ></a>
           </article>
         </div>
       </section>
@@ -189,7 +200,7 @@
       <!-- Skills -->
       <section
         id="competences"
-        class="container mx-auto px-6 md:px-10 lg:px-20 py-12"
+        class="container mx-auto px-6 md:px-10 lg:px-20 py-12 pt-[130px]"
       >
         <h2
           class="text-2xl md:text-3xl font-bold text-blue mb-6 animate-fade-in-up"
@@ -202,14 +213,18 @@
             class="bg-white rounded-xl p-6 shadow hover:shadow-xl transition transform hover:-translate-y-2"
           >
             <h4 class="font-semibold mb-3">Produit & Management</h4>
-            <p class="text-sm text-gray mb-4">
-              Lancement de produit SaaS, roadmap, mise en production<br />
-              Refonte logicielle, pilotage UX/UI<br />
-              Structuration et pilotage d’équipe IT (agile)
-            </p>
-            <div class="flex gap-2 flex-wrap">
+            <ul class="list-disc list-inside text-sm text-gray mb-4 text-left">
+              <li>Lancement de produit SaaS, roadmap, mise en production</li>
+              <li>Refonte logicielle, pilotage UX/UI</li>
+              <li>Structuration et pilotage d’équipe IT (agile)</li>
+            </ul>
+            <div class="flex gap-2 flex-wrap mt-2 justify-start">
               <span class="px-3 py-1 bg-blue text-white rounded-full text-xs"
-                >Agile</span
+                >Scrum</span
+              >
+              <span
+                class="px-3 py-1 bg-orange text-gray-dark rounded-full text-xs"
+                >Jira</span
               >
               <span class="px-3 py-1 bg-green text-white rounded-full text-xs"
                 >Team Lead</span
@@ -225,12 +240,12 @@
             class="bg-white rounded-xl p-6 shadow hover:shadow-xl transition transform hover:-translate-y-2"
           >
             <h4 class="font-semibold mb-3">Architecture & Process</h4>
-            <p class="text-sm text-gray mb-4">
-              Plan de Continuité d’Activité (PCA), résilience SI<br />
-              CI/CD, code review, qualité logicielle<br />
-              API Rest & GraphQL, Docker
-            </p>
-            <div class="flex gap-2 flex-wrap">
+            <ul class="list-disc list-inside text-sm text-gray mb-4 text-left">
+              <li>Plan de Continuité d’Activité (PCA), résilience SI</li>
+              <li>CI/CD, code review, qualité logicielle</li>
+              <li>API Rest & GraphQL, Docker</li>
+            </ul>
+            <div class="flex gap-2 flex-wrap mt-2 justify-start">
               <span
                 class="px-3 py-1 bg-orange text-gray-dark rounded-full text-xs"
                 >CI/CD</span
@@ -252,11 +267,11 @@
             class="bg-white rounded-xl p-6 shadow hover:shadow-xl transition transform hover:-translate-y-2"
           >
             <h4 class="font-semibold mb-3">Stack technique</h4>
-            <p class="text-sm text-gray mb-4">
-              Toujours à la recherche des technologies modernes et adaptées aux
-              projets.
-            </p>
-            <div class="flex gap-2 flex-wrap">
+            <ul class="list-disc list-inside text-sm text-gray mb-4 text-left">
+              <li>Technologies modernes et adaptées aux projets</li>
+              <li>Front-end, back-end, cloud & data</li>
+            </ul>
+            <div class="flex gap-2 flex-wrap mt-2 justify-start">
               <span class="px-3 py-1 bg-blue text-white rounded-full text-xs"
                 >TypeScript</span
               >
@@ -293,6 +308,23 @@
 
 <script setup lang="ts">
 // logique possible : load projects dynamiquement, router anchors, etc.
+
+function smoothScrollTo(selector: string) {
+  const el = document.querySelector(selector);
+  if (el) {
+    el.scrollIntoView({ behavior: "smooth" });
+  }
+}
+
+function onScrollToProjets(e: Event) {
+  e.preventDefault();
+  smoothScrollTo("#projets");
+}
+
+function onScrollToCompetences(e: Event) {
+  e.preventDefault();
+  smoothScrollTo("#competences");
+}
 </script>
 
 <style scoped>
