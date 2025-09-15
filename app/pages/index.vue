@@ -26,13 +26,57 @@
               class="bg-white rounded-2xl shadow-2xl p-8 md:p-12 text-center transform transition hover:shadow-[0_30px_60px_rgba(38,84,124,0.12)] animate-fade-in-up"
               style="border: 1px solid rgba(39, 52, 68, 0.06)"
             >
-              <!-- Avatar & Contact -->
+              <!-- Avatar-->
               <div class="relative mb-4">
                 <img
-                  src="../assets/img/pp-fb.jpg"
+                  src="../assets/img/pp-fb.png"
                   alt="Logo"
                   class="inline-flex items-center justify-center w-40 h-40 bg-blue text-white rounded-full mx-auto text-xl font-bold shadow-md"
                 />
+              </div>
+              <!-- Contact bar -->
+              <div class="flex justify-center gap-5 mt-4">
+                <!-- Email -->
+                <a
+                  href="mailto:fb.felixberger@gmail.com"
+                  target="_blank"
+                  rel="noopener"
+                  aria-label="Email"
+                  class="transition transform hover:scale-110 bg-gray-dark text-white rounded-full h-8 w-8 flex items-center justify-center"
+                >
+                  <UIcon
+                    name="i-heroicons-envelope"
+                    class="w-5 h-5 text-white"
+                  />
+                </a>
+
+                <!-- LinkedIn -->
+                <a
+                  href="https://www.linkedin.com/in/felix-berger/"
+                  target="_blank"
+                  rel="noopener"
+                  aria-label="LinkedIn"
+                  class="transition transform hover:scale-110 bg-gray-dark hover:text-blue rounded-full h-8 w-8 flex items-center justify-center"
+                >
+                  <UIcon
+                    name="i-simple-icons-linkedin"
+                    class="w-4 h-4 text-white"
+                  />
+                </a>
+
+                <!-- GitHub -->
+                <a
+                  href="https://github.com/FelixB69"
+                  target="_blank"
+                  rel="noopener"
+                  aria-label="GitHub"
+                  class="transition transform hover:scale-110 bg-gray-dark hover:text-[#171515] rounded-full h-8 w-8 flex items-center justify-center"
+                >
+                  <UIcon
+                    name="i-simple-icons-github"
+                    class="w-5 h-5 text-white"
+                  />
+                </a>
               </div>
 
               <h1
@@ -53,15 +97,12 @@
                 Actuellement
                 <b>Responsable du Développement Informatique</b> chez Likewatt,
                 je contribue à la transition numérique des acteurs des énergies
-                renouvelables en pilotant des projets logiciels stratégiques, de
-                la vision à l’exécution.
+                renouvelables. Je pilote et développe des projets IT
+                stratégiques, de la réflexion à l’exécution.
               </p>
 
-              <!-- Compétences -->
+              <!-- Skills -->
               <div class="mt-8 flex flex-wrap justify-center gap-3 mb-6">
-                <span class="px-3 py-1 rounded-full bg-blue text-white text-xs"
-                  >Full-Stack</span
-                >
                 <span class="px-3 py-1 rounded-full bg-blue text-white text-xs"
                   >Full-Stack</span
                 >
@@ -69,13 +110,13 @@
                   >Typescript</span
                 >
                 <span class="px-3 py-1 rounded-full bg-blue text-white text-xs"
-                  >React</span
-                >
-                <span class="px-3 py-1 rounded-full bg-blue text-white text-xs"
-                  >Next.js</span
-                >
-                <span class="px-3 py-1 rounded-full bg-blue text-white text-xs"
                   >Node.js</span
+                >
+                <span class="px-3 py-1 rounded-full bg-blue text-white text-xs"
+                  >React / Next</span
+                >
+                <span class="px-3 py-1 rounded-full bg-blue text-white text-xs"
+                  >NestJS</span
                 >
               </div>
 
@@ -85,14 +126,14 @@
                   @click="onScrollToProjets"
                   class="inline-flex items-center gap-3 px-6 py-3 bg-pink text-white rounded-full shadow hover:scale-105 transition transform animate-pop"
                 >
-                  Voir mes projets
+                  Découvrir mes projets
                 </a>
                 <a
                   href="#competences"
                   @click="onScrollToCompetences"
-                  class="text-sm text-gray hover:text-blue transition"
+                  class="inline-flex items-center gap-3 px-6 py-3 bg-white text-pink rounded-full border border-pink shadow hover:scale-105 transition transform animate-pop"
                 >
-                  Voir mes compétences →
+                  Voir mes compétences
                 </a>
               </div>
             </div>
@@ -212,13 +253,7 @@
           <div
             class="bg-white rounded-xl p-6 shadow hover:shadow-xl transition transform hover:-translate-y-2"
           >
-            <h4 class="font-semibold mb-3">Produit & Management</h4>
-            <ul class="list-disc list-inside text-sm text-gray mb-4 text-left">
-              <li>Lancement de produit SaaS, roadmap, mise en production</li>
-              <li>Refonte logicielle, pilotage UX/UI</li>
-              <li>Structuration et pilotage d’équipe IT (agile)</li>
-            </ul>
-            <div class="flex gap-2 flex-wrap mt-2 justify-start">
+            <div class="flex gap-2 flex-wrap mb-4 justify-start">
               <span class="px-3 py-1 bg-blue text-white rounded-full text-xs"
                 >Scrum</span
               >
@@ -233,47 +268,61 @@
                 >UX/UI</span
               >
             </div>
+            <h4 class="font-semibold mb-3">Produict & Management</h4>
+            <ul class="list-disc list-inside text-sm text-gray mb-4 text-left">
+              <li>
+                Lancement d'un produit SaaS : de la roadmap à la mise en
+                production
+              </li>
+              <li>Pilotage d'un projet interne avec un partenaire UX/UI</li>
+              <li>Structuration et pilotage d’une équipe IT en mode agile</li>
+              ...
+            </ul>
           </div>
 
           <!-- Architecture & Process -->
           <div
             class="bg-white rounded-xl p-6 shadow hover:shadow-xl transition transform hover:-translate-y-2"
           >
-            <h4 class="font-semibold mb-3">Architecture & Process</h4>
-            <ul class="list-disc list-inside text-sm text-gray mb-4 text-left">
-              <li>Plan de Continuité d’Activité (PCA), résilience SI</li>
-              <li>CI/CD, code review, qualité logicielle</li>
-              <li>API Rest & GraphQL, Docker</li>
-            </ul>
-            <div class="flex gap-2 flex-wrap mt-2 justify-start">
-              <span
-                class="px-3 py-1 bg-orange text-gray-dark rounded-full text-xs"
-                >CI/CD</span
-              >
-              <span class="px-3 py-1 bg-blue text-white rounded-full text-xs"
-                >Docker</span
-              >
+            <div class="flex gap-2 flex-wrap mb-4 justify-start">
               <span class="px-3 py-1 bg-green text-white rounded-full text-xs"
-                >API</span
+                >Architecture</span
               >
+
               <span class="px-3 py-1 bg-pink text-white rounded-full text-xs"
                 >Qualité</span
               >
+
+              <span class="px-3 py-1 bg-blue text-white rounded-full text-xs"
+                >Orchestration</span
+              >
             </div>
+            <h4 class="font-semibold mb-3">Architecture & Process</h4>
+
+            <ul class="list-disc list-inside text-sm text-gray mb-4 text-left">
+              <li>Mise en place d'une architecture avec des microservices</li>
+              <li>Elaboration d'un plan de Continuité d’Activité (PCA)</li>
+              <li>Modélisation d'une cartographie du SI</li>
+              <li>
+                Mise en place d'une CI/CD, de processus de déploiement, de code
+                review...
+              </li>
+              <li>Orchestration de conteneur via Docker et Caprover</li>
+              ...
+            </ul>
           </div>
 
           <!-- Stack technique -->
           <div
             class="bg-white rounded-xl p-6 shadow hover:shadow-xl transition transform hover:-translate-y-2"
           >
-            <h4 class="font-semibold mb-3">Stack technique</h4>
-            <ul class="list-disc list-inside text-sm text-gray mb-4 text-left">
-              <li>Technologies modernes et adaptées aux projets</li>
-              <li>Front-end, back-end, cloud & data</li>
-            </ul>
-            <div class="flex gap-2 flex-wrap mt-2 justify-start">
+            <div class="flex gap-2 flex-wrap mb-4 justify-start">
               <span class="px-3 py-1 bg-blue text-white rounded-full text-xs"
                 >TypeScript</span
+              >
+              <span
+                class="px-3 py-1 bg-orange text-gray-dark rounded-full text-xs"
+                >Node</span
               >
               <span class="px-3 py-1 bg-green text-white rounded-full text-xs"
                 >React</span
@@ -281,20 +330,29 @@
               <span class="px-3 py-1 bg-pink text-white rounded-full text-xs"
                 >Angular</span
               >
-              <span
-                class="px-3 py-1 bg-orange text-gray-dark rounded-full text-xs"
-                >Node.js</span
+
+              <span class="px-3 py-1 bg-green text-white rounded-full text-xs"
+                >SQL / NoSQL</span
               >
               <span class="px-3 py-1 bg-blue text-white rounded-full text-xs"
                 >NestJS</span
               >
-              <span class="px-3 py-1 bg-green text-white rounded-full text-xs"
-                >SQL</span
-              >
-              <span class="px-3 py-1 bg-pink text-white rounded-full text-xs"
-                >Firebase</span
-              >
             </div>
+            <h4 class="font-semibold mb-3">Stack technique</h4>
+            <ul class="list-disc list-inside text-sm text-gray mb-4 text-left">
+              <li>
+                Mise en place d'une API complète avec authentification et tests
+              </li>
+              <li>
+                Création d'une application web from scratch utilisée par plus de
+                200 utilisateurs
+              </li>
+              <li>
+                Refonte UX/UI d'une application existantes utilisée par plus de
+                200 clients (3000 utilisateurs)
+              </li>
+              ...
+            </ul>
           </div>
         </div>
       </section>
@@ -307,8 +365,6 @@
 </template>
 
 <script setup lang="ts">
-// logique possible : load projects dynamiquement, router anchors, etc.
-
 function smoothScrollTo(selector: string) {
   const el = document.querySelector(selector);
   if (el) {
@@ -328,7 +384,6 @@ function onScrollToCompetences(e: Event) {
 </script>
 
 <style scoped>
-/* Animations */
 @keyframes fade-in-up {
   from {
     opacity: 0;

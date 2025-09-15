@@ -8,4 +8,5 @@ export default defineNuxtConfig({
       "@tailwindcss/postcss": {},
     },
   },
+  modules: ["@nuxt/ui"],
 });
