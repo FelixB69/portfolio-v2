@@ -7,7 +7,7 @@
     >
       <div class="flex items-center">
         <img
-          src="../../img/logo-fb.png"
+          src="/img/logo-fb.png"
           alt="Logo"
           class="h-25 w-25 object-contain"
         />

@@ -9,7 +9,7 @@
           <!-- Avatar -->
           <div class="relative mb-4">
             <img
-              src="../../img/pp-fb.png"
+              src="/img/pp-fb.png"
               alt="Logo"
               class="inline-flex items-center justify-center w-40 h-40 bg-blue text-white rounded-full mx-auto text-xl font-bold shadow-md"
             />

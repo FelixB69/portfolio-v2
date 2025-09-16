@@ -29,7 +29,7 @@
         <Projects>
           <!-- Project Simulator -->
           <ProjectCard
-            image="../img/project1.png"
+            image="/img/project1.png"
             alt="Projet A"
             title="Dev, votre salaire est-il aligné avec le marché ?"
             href="https://simulator-rh.felixberger.fr/"
@@ -43,7 +43,7 @@
 
           <!-- Project Dashboard -->
           <ProjectCard
-            image="../img/project2.png"
+            image="/img/project2.png"
             alt="Projet B"
             title="Dev, quel salaire en France ?"
             href="https://dev-rh.felixberger.fr/"
@@ -115,15 +115,15 @@
 
 <script setup lang="ts">
 import Header from "../components/Header.vue";
-import HeroSection from "../components/IntroSection.vue";
-import Projects from "../components/Projects.vue";
-import Skills from "../components/Skills.vue";
-import HeroContactBar from "../components/IntroContactBar.vue";
-import HeroDescription from "../components/IntroDescription.vue";
-import HeroSkills from "../components/IntroSkills.vue";
-import HeroCTAs from "../components/IntroCTAs.vue";
-import ProjectCard from "../components/ProjectCard.vue";
-import CompetenceCard from "../components/SkillCard.vue";
+import HeroSection from "../components/intro/IntroSection.vue";
+import Projects from "../components/project/Projects.vue";
+import Skills from "../components/skill/Skills.vue";
+import HeroContactBar from "../components/intro/IntroContactBar.vue";
+import HeroDescription from "../components/intro/IntroDescription.vue";
+import HeroSkills from "../components/intro/IntroSkills.vue";
+import HeroCTAs from "../components/intro/IntroCTAs.vue";
+import ProjectCard from "../components/project/ProjectCard.vue";
+import CompetenceCard from "../components/skill/SkillCard.vue";
 
 function smoothScrollTo(selector: string) {
   const el = document.querySelector(selector);
