@@ -1,6 +1,6 @@
 <template>
   <section id="hero" class="min-h-[60vh] flex items-center">
-    <div class="container mx-auto px-6 md:px-10 lg:px-20 py-8">
+    <div class="container mx-auto px-6 md:px-10 lg:px-20 py-10">
       <div class="max-w-3xl mx-auto">
         <div
           class="bg-white rounded-2xl shadow-2xl p-8 md:p-12 text-center transform transition hover:shadow-[0_30px_60px_rgba(38,84,124,0.12)] animate-fade-in-up"

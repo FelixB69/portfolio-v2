@@ -1,7 +1,6 @@
 <template>
   <div class="min-h-screen bg-gray-light text-gray-dark font-sans">
-    <Header />
-
+    <Header @scroll-to="scrollToSection" />
     <main class="pt-20">
       <HeroSection>
         <template #contact-bar>
@@ -63,7 +62,22 @@
         </Projects>
       </section>
 
-      <section id="competences">
+      <section id="parcours" ref="flowContainer">
+        <Suspense>
+          <template #default>
+            <CareerFlowLazy v-if="showFlow" />
+          </template>
+          <template #fallback>
+            <div
+              class="h-[500px] sm:h-[650px] md:h-[800px] bg-gray-50 rounded-2xl flex items-center justify-center text-gray"
+            >
+              Chargement...
+            </div>
+          </template>
+        </Suspense>
+      </section>
+
+      <section id="skills">
         <Skills>
           <CompetenceCard
             title="Produit & Management"
@@ -114,6 +128,7 @@
 </template>
 
 <script setup lang="ts">
+import { ref, onMounted, onUnmounted, defineAsyncComponent } from "vue";
 import Header from "../components/Header.vue";
 import HeroSection from "../components/intro/IntroSection.vue";
 import Projects from "../components/project/Projects.vue";
@@ -124,6 +139,32 @@ import HeroSkills from "../components/intro/IntroSkills.vue";
 import HeroCTAs from "../components/intro/IntroCTAs.vue";
 import ProjectCard from "../components/project/ProjectCard.vue";
 import CompetenceCard from "../components/skill/SkillCard.vue";
+
+const CareerFlowLazy = defineAsyncComponent(
+  () => import("../components/flow/CareerFlow.vue"),
+);
+
+const flowContainer = ref<HTMLElement | null>(null);
+const showFlow = ref(false);
+
+onMounted(() => {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      for (const entry of entries) {
+        if (entry.isIntersecting) {
+          showFlow.value = true;
+          observer.disconnect();
+          break;
+        }
+      }
+    },
+    { root: null, rootMargin: "300px", threshold: 0.01 },
+  );
+
+  if (flowContainer.value) observer.observe(flowContainer.value);
+
+  onUnmounted(() => observer.disconnect());
+});
 
 function smoothScrollTo(selector: string) {
   const el = document.querySelector(selector);
@@ -139,6 +180,12 @@ function onScrollToCompetences(e: Event) {
   e.preventDefault();
   smoothScrollTo("#competences");
 }
+
+// si tu as déjà une fonction, remplace ou utilise la tienne
+const scrollToSection = (id: string) => {
+  const el = document.getElementById(id);
+  if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+};
 </script>
 
 <style scoped>

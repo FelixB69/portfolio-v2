@@ -9,7 +9,7 @@
     >
       <UIcon
         name="i-heroicons-envelope"
-        class="w-5 h-5 text-white group-hover:text-blue"
+        class="w-5 h-5 text-white group-hover:text-gray-200"
       />
     </a>
 
@@ -22,7 +22,7 @@
     >
       <UIcon
         name="i-simple-icons-linkedin"
-        class="w-4 h-4 text-white group-hover:text-blue"
+        class="w-4 h-4 text-white group-hover:text-gray-200"
       />
     </a>
 

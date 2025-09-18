@@ -7,13 +7,6 @@
     >
       Découvrir mes projets
     </a>
-    <a
-      href="#competences"
-      @click="onCompetencesHandler"
-      class="inline-flex items-center gap-3 px-6 py-3 bg-white text-pink rounded-full border border-pink shadow hover:scale-105 transition transform animate-pop"
-    >
-      Voir mes compétences
-    </a>
   </div>
 </template>
 
