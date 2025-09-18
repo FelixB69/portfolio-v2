@@ -173,8 +173,8 @@ const elements = ref([
     type: "experience",
     position: { x: 750, y: 390 },
     data: {
-      title: "Responsable développement",
-      description: "Likewatt - Management équipe & architecture",
+      title: "Responsable développement IT",
+      description: "Likewatt - Management d'équipe et gestion de projet",
       date: "Mai 2024 - Aujourd'hui",
     },
     draggable: true,

@@ -31,7 +31,7 @@
             image="/img/project1.png"
             alt="Projet A"
             title="Dev, votre salaire est-il aligné avec le marché ?"
-            href="https://simulator-rh.felixberger.fr/"
+            href="https://simulateur.felixberger.fr/"
             :ariaLabel="'Ouvrir le simulateur'"
             :tags="['Next.js', 'Node.js', 'TensorFlow']"
           >
@@ -45,7 +45,7 @@
             image="/img/project2.png"
             alt="Projet B"
             title="Dev, quel salaire en France ?"
-            href="https://dev-rh.felixberger.fr/"
+            href="https://salaires.felixberger.fr/"
             :ariaLabel="'Ouvrir le dashboard salaires'"
             :tags="['Angular', 'Node.js']"
           >
