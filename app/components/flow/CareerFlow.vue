@@ -29,7 +29,7 @@
           <!-- EDUCATION -->
           <template #node-education="{ id, data }">
             <div
-              class="relative bg-white rounded-lg p-2 sm:p-3 shadow-lg border-2 border-pink bg-gradient-to-br from-pink-50 to-pink-100 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl min-w-[160px] sm:min-w-[200px] max-w-[220px] flex items-center gap-2"
+              class="relative bg-white rounded-lg p-2 sm:p-3 shadow-lg border-2 border-blue bg-gradient-to-br from-blue-50 to-blue-100 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl min-w-[160px] sm:min-w-[200px] max-w-[220px] flex items-center gap-2"
             >
               <div class="text-2xl flex-shrink-0">🎓</div>
               <div class="flex-1">
@@ -93,10 +93,34 @@
               <Handle type="target" position="top" :id="`${id}-top`" />
 
               <Handle
+                v-if="['3', '4', '6'].includes(id)"
+                type="source"
+                position="bottom"
+                :id="`${id}-bottom`"
+              />
+
+              <Handle
                 v-if="id === '5'"
                 type="source"
                 position="bottom"
                 :id="`${id}-bottom`"
+              />
+            </div>
+          </template>
+
+          <template #node-project="{ id, data }">
+            <div
+              class="relative bg-white rounded-md p-2 shadow-sm border-2 border-orange-400 bg-gradient-to-br from-orange-50 to-orange-100 transition-all duration-200 min-w-[80px] max-w-[110px] min-h-[56px] flex items-center justify-center"
+            >
+              <h4 class="text-center text-sm font-bold text-orange-800">
+                {{ data.title }}
+              </h4>
+
+              <Handle
+                type="target"
+                position="top"
+                :id="`${id}-top`"
+                class="absolute -top-3"
               />
             </div>
           </template>
@@ -139,7 +163,7 @@ const elements = ref([
   {
     id: "2",
     type: "education",
-    position: { x: 520, y: 40 },
+    position: { x: 580, y: 40 },
     data: {
       title: "Concepteur Développeur d'Applications",
       description: "Wild Code School - Titre CDA (Bac +3/4)",
@@ -149,7 +173,7 @@ const elements = ref([
   {
     id: "4",
     type: "experience",
-    position: { x: 350, y: 220 },
+    position: { x: 420, y: 220 },
     data: {
       title: "Développeur Front-end",
       description: "EntendsMoi - React/Redux/Node.js",
@@ -160,7 +184,7 @@ const elements = ref([
   {
     id: "5",
     type: "experience",
-    position: { x: 750, y: 220 },
+    position: { x: 740, y: 220 },
     data: {
       title: "Développeur Full-Stack",
       description: "Likewatt - React/Node/Nest.js",
@@ -171,7 +195,7 @@ const elements = ref([
   {
     id: "6",
     type: "experience",
-    position: { x: 750, y: 390 },
+    position: { x: 740, y: 390 },
     data: {
       title: "Responsable développement IT",
       description: "Likewatt - Management d'équipe et gestion de projet",
@@ -213,6 +237,160 @@ const elements = ref([
     sourceHandle: "5-bottom",
     target: "6",
     targetHandle: "6-top",
+    type: "smoothstep",
+  },
+
+  // Projects for node 3 (Chargé de projet Marketing)
+  {
+    id: "p3-1",
+    type: "project",
+    position: { x: 0, y: 430 },
+    data: {
+      title: "Campagne SEO/SEA",
+    },
+    draggable: true,
+  },
+  {
+    id: "p3-2",
+    type: "project",
+    position: { x: 135, y: 430 },
+    data: {
+      title: "Création de site",
+    },
+    draggable: true,
+  },
+  {
+    id: "p3-3",
+    type: "project",
+    position: { x: 270, y: 430 },
+    data: {
+      title: "Intégration marketing automation",
+    },
+    draggable: true,
+  },
+
+  {
+    id: "e3-p3-1",
+    source: "3",
+    sourceHandle: "3-bottom",
+    target: "p3-1",
+    targetHandle: "p3-1-top",
+    type: "smoothstep",
+  },
+  {
+    id: "e3-p3-2",
+    source: "3",
+    sourceHandle: "3-bottom",
+    target: "p3-2",
+    targetHandle: "p3-2-top",
+    type: "smoothstep",
+  },
+  {
+    id: "e3-p3-3",
+    source: "3",
+    sourceHandle: "3-bottom",
+    target: "p3-3",
+    targetHandle: "p3-3-top",
+    type: "smoothstep",
+  },
+
+  // Projects for node 4 (Développeur Front-end)
+
+  {
+    id: "p4-2",
+    type: "project",
+    position: { x: 400, y: 390 },
+    data: {
+      title: "Export PDF",
+    },
+    draggable: true,
+  },
+  {
+    id: "p4-3",
+    type: "project",
+    position: { x: 550, y: 390 },
+    data: {
+      title: "Implémentation store",
+    },
+    draggable: true,
+  },
+
+  {
+    id: "e4-p4-1",
+    source: "4",
+    sourceHandle: "4-bottom",
+    target: "p4-1",
+    targetHandle: "p4-1-top",
+    type: "smoothstep",
+  },
+  {
+    id: "e4-p4-2",
+    source: "4",
+    sourceHandle: "4-bottom",
+    target: "p4-2",
+    targetHandle: "p4-2-top",
+    type: "smoothstep",
+  },
+  {
+    id: "e4-p4-3",
+    source: "4",
+    sourceHandle: "4-bottom",
+    target: "p4-3",
+    targetHandle: "p4-3-top",
+    type: "smoothstep",
+  },
+
+  // Projects for node 6 (Responsable développement IT)
+  {
+    id: "p6-1",
+    type: "project",
+    position: { x: 660, y: 600 },
+    data: {
+      title: "Refonte totale du logiciel",
+    },
+    draggable: true,
+  },
+  {
+    id: "p6-2",
+    type: "project",
+    position: { x: 795, y: 600 },
+    data: {
+      title: "Lancement nouveau SaaS",
+    },
+    draggable: true,
+  },
+  {
+    id: "p6-3",
+    type: "project",
+    position: { x: 930, y: 600 },
+    data: {
+      title: "Plan de continuité d'activité",
+    },
+    draggable: true,
+  },
+
+  {
+    id: "e6-p6-1",
+    source: "6",
+    sourceHandle: "6-bottom",
+    target: "p6-1",
+    targetHandle: "p6-1-top",
+    type: "smoothstep",
+  },
+  {
+    id: "e6-p6-2",
+    source: "6",
+    sourceHandle: "6-bottom",
+    target: "p6-2",
+    targetHandle: "p6-2-top",
+    type: "smoothstep",
+  },
+  {
+    id: "e6-p6-3",
+    source: "6",
+    sourceHandle: "6-bottom",
+    target: "p6-3",
+    targetHandle: "p6-3-top",
     type: "smoothstep",
   },
 ]);

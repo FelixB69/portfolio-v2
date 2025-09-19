@@ -114,7 +114,7 @@
             :bullets="[
               'Mise en place d’une API complète avec authentification et tests',
               'Création d’une application web from scratch utilisée par plus de 200 utilisateurs',
-              'Refonte UX/UI d’une application existante utilisée par plus de 200 clients (3 000 utilisateurs)',
+              'Refonte de l\'API et de l\'UX/UI d’une application existante utilisée par plus de 200 clients (3 000 utilisateurs)',
             ]"
           />
         </Skills>
