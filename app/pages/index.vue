@@ -33,7 +33,7 @@
             title="Dev, votre salaire est-il aligné avec le marché ?"
             href="https://simulateur.felixberger.fr/"
             :ariaLabel="'Ouvrir le simulateur'"
-            :tags="['Next.js', 'Node.js', 'TensorFlow']"
+            :tags="['Next.js', 'Node.js', 'NestJS', 'TensorFlow']"
           >
             Découvrez en quelques secondes si votre rémunération correspond aux
             standards actuels grâce à un <b>simulateur</b> basé sur plus de 500
@@ -47,7 +47,7 @@
             title="Dev, quel salaire en France ?"
             href="https://salaires.felixberger.fr/"
             :ariaLabel="'Ouvrir le dashboard salaires'"
-            :tags="['Angular', 'Node.js']"
+            :tags="['Angular', 'Node.js', 'NestJS']"
           >
             Consultez ce tableau de bord et découvrez les salaires des
             développeurs de votre région. Données extraites de
@@ -55,7 +55,7 @@
               href="https://salaires.dev"
               target="_blank"
               rel="noopener"
-              class="text-blue underline"
+              class="text-blue font-medium hover:underline"
               >salaires.dev</a
             >.
           </ProjectCard>
@@ -69,9 +69,16 @@
           </template>
           <template #fallback>
             <div
-              class="h-[500px] sm:h-[650px] md:h-[800px] bg-gray-50 rounded-2xl flex items-center justify-center text-gray"
+              class="h-[500px] sm:h-[650px] md:h-[800px] bg-white/50 backdrop-blur-sm rounded-3xl flex items-center justify-center text-gray mx-6 md:mx-20"
             >
-              Chargement...
+              <div class="flex flex-col items-center gap-4">
+                <div
+                  class="w-10 h-10 border-4 border-blue/30 border-t-blue rounded-full animate-spin"
+                ></div>
+                <span class="text-gray-dark/60 font-medium"
+                  >Chargement du parcours...</span
+                >
+              </div>
             </div>
           </template>
         </Suspense>
@@ -80,12 +87,13 @@
       <section id="skills">
         <Skills>
           <CompetenceCard
-            title="Produit & Management"
-            :tags="['Scrum', 'Jira', 'Team Lead', 'UX/UI']"
+            title="Pilotage & Management"
+            :tags="['Scrum', 'Jira', 'Team Lead', 'UX/UI', 'Freelance']"
             :bullets="[
-              'Lancement d’un produit SaaS : de la roadmap à la mise en production',
-              'Pilotage d’un projet interne avec un partenaire UX/UI',
-              'Structuration et pilotage d’une équipe IT en mode agile',
+              `Lancement d'un produit SaaS : de la roadmap à la mise en production`,
+              `Pilotage d'un projet freelance (Kiweeto) : architecture y compris encadrement et gestion de projet`,
+              `Pilotage d'une refonte logicielle avec un partenaire UX/UI`,
+              `Structuration et pilotage d'une équipe IT en mode agile`,
             ]"
           />
 
@@ -93,11 +101,11 @@
             title="Architecture & Process"
             :tags="['Architecture', 'Qualité', 'Orchestration']"
             :bullets="[
-              'Mise en place d’une architecture microservices',
-              'Élaboration d’un Plan de Continuité d’Activité (PCA)',
-              'Modélisation d’une cartographie du SI',
-              'Mise en place d’une CI/CD, de processus de déploiement, de code review…',
-              'Orchestration de conteneurs via Docker et CapRover',
+              `Mise en place d'une architecture microservices`,
+              `Élaboration d'un Plan de Continuité d'Activité (PCA)`,
+              `Modélisation d'une cartographie du SI`,
+              `Mise en place d'une CI/CD, de processus de déploiement, de code review…`,
+              `Orchestration de conteneurs via Docker et CapRover`,
             ]"
           />
 
@@ -107,21 +115,38 @@
               'TypeScript',
               'Node',
               'React',
+              'Next.js',
               'NestJS',
-              'SQL / NoSQL',
+              'Supabase',
+              'Firebase',
+              'Socket.io',
+              'SQL',
               'Angular',
             ]"
             :bullets="[
-              'Mise en place d’une API complète avec authentification et tests',
-              'Création d’une application web from scratch utilisée par plus de 200 utilisateurs',
-              'Refonte de l\'API et de l\'UX/UI d’une application existante utilisée par plus de 200 clients (3 000 utilisateurs)',
+              `Refonte de l'API et de l'UX/UI d'une application existante utilisée par plus de 200 clients (3 000 utilisateurs)`,
+              `Création d'une application web professionnelle from scratch utilisée par plus de 200 utilisateurs`,
+              `Développement d'une application web complexe (Kiweeto) : Next.js, Supabase, Socket.io`,
+              `Mise en place d'une API complète avec authentification et tests`,
             ]"
           />
         </Skills>
       </section>
 
-      <footer class="py-12 text-center text-sm text-gray">
-        © {{ new Date().getFullYear() }} - Félix Berger
+      <!-- Modern Footer -->
+      <footer class="relative py-8 mt-2">
+        <!-- Subtle top border -->
+        <div
+          class="absolute top-0 left-1/2 -translate-x-1/2 w-1/2 h-px bg-gray/10"
+        ></div>
+
+        <div class="relative z-10 text-center">
+          <p class="text-gray font-medium">
+            © {{ new Date().getFullYear() }} —
+            <span class="text-blue font-semibold">Félix Berger</span>
+          </p>
+          <p class="text-sm text-gray/60 mt-2">Fait avec passion à Lyon</p>
+        </div>
       </footer>
     </main>
   </div>
@@ -141,7 +166,7 @@ import ProjectCard from "../components/project/ProjectCard.vue";
 import CompetenceCard from "../components/skill/SkillCard.vue";
 
 const CareerFlowLazy = defineAsyncComponent(
-  () => import("../components/flow/CareerFlow.vue"),
+  () => import("../components/flow/CareerFlow.vue")
 );
 
 const flowContainer = ref<HTMLElement | null>(null);
@@ -158,7 +183,7 @@ onMounted(() => {
         }
       }
     },
-    { root: null, rootMargin: "300px", threshold: 0.01 },
+    { root: null, rootMargin: "300px", threshold: 0.01 }
   );
 
   if (flowContainer.value) observer.observe(flowContainer.value);
@@ -181,7 +206,6 @@ function onScrollToCompetences(e: Event) {
   smoothScrollTo("#competences");
 }
 
-// si tu as déjà une fonction, remplace ou utilise la tienne
 const scrollToSection = (id: string) => {
   const el = document.getElementById(id);
   if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -189,52 +213,6 @@ const scrollToSection = (id: string) => {
 </script>
 
 <style scoped>
-@keyframes fade-in-up {
-  from {
-    opacity: 0;
-    transform: translateY(18px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-@keyframes zoom-in {
-  from {
-    opacity: 0;
-    transform: scale(0.98);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-@keyframes pop {
-  0% {
-    transform: scale(0.98);
-  }
-  60% {
-    transform: scale(1.03);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
-
-.animate-fade-in-up {
-  animation: fade-in-up 0.9s cubic-bezier(0.2, 0.8, 0.2, 1) both;
-}
-.animate-zoom-in {
-  animation: zoom-in 0.9s cubic-bezier(0.2, 0.8, 0.2, 1) both;
-}
-.animate-pop {
-  animation: pop 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) both;
-}
-
-.container {
-  max-width: 1200px;
-}
-
 /* Responsive tweaks */
 @media (max-width: 640px) {
   header nav {

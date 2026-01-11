@@ -1,10 +1,9 @@
 <template>
   <div class="container mx-auto px-4 sm:px-6 md:px-20 pt-[140px]">
-    <h2
-      class="text-2xl md:text-3xl font-bold text-blue mb-6 animate-fade-in-up"
-    >
-      Mon parcours
-    </h2>
+    <div class="flex items-center gap-4 mb-8 animate-fade-in-up">
+      <div class="w-1.5 h-10 bg-blue rounded-full"></div>
+      <h2 class="text-3xl md:text-4xl font-bold text-blue">Mon parcours</h2>
+    </div>
 
     <!-- Ajout : courte indication sur l'interaction -->
     <p class="text-sm text-gray-500 mb-4 animate-fade-in-up mb-6">
@@ -93,7 +92,7 @@
               <Handle type="target" position="top" :id="`${id}-top`" />
 
               <Handle
-                v-if="['3', '4', '6'].includes(id)"
+                v-if="['3', '4', '6', '7'].includes(id)"
                 type="source"
                 position="bottom"
                 :id="`${id}-bottom`"
@@ -203,6 +202,17 @@ const elements = ref([
     },
     draggable: true,
   },
+  {
+    id: "7",
+    type: "experience",
+    position: { x: 1060, y: 220 },
+    data: {
+      title: "Lead Dev - Freelance",
+      description: "Kiweeto - Next.js, Supabase, Architecture",
+      date: "Oct 2024 - Aujourd'hui",
+    },
+    draggable: true,
+  },
 
   {
     id: "e1-3",
@@ -237,6 +247,15 @@ const elements = ref([
     sourceHandle: "5-bottom",
     target: "6",
     targetHandle: "6-top",
+    type: "smoothstep",
+  },
+
+  {
+    id: "e6-7",
+    source: "6",
+    sourceHandle: "6-bottom",
+    target: "7",
+    targetHandle: "7-top",
     type: "smoothstep",
   },
 
@@ -391,6 +410,60 @@ const elements = ref([
     sourceHandle: "6-bottom",
     target: "p6-3",
     targetHandle: "p6-3-top",
+    type: "smoothstep",
+  },
+
+  // Projects for node 7 (Kiweeto - Lead Dev Freelance)
+  {
+    id: "p7-1",
+    type: "project",
+    position: { x: 1000, y: 430 },
+    data: {
+      title: "App web Next.js",
+    },
+    draggable: true,
+  },
+  {
+    id: "p7-2",
+    type: "project",
+    position: { x: 1135, y: 430 },
+    data: {
+      title: "Architecture Supabase",
+    },
+    draggable: true,
+  },
+  {
+    id: "p7-3",
+    type: "project",
+    position: { x: 1270, y: 430 },
+    data: {
+      title: "Pilotage projet",
+    },
+    draggable: true,
+  },
+
+  {
+    id: "e7-p7-1",
+    source: "7",
+    sourceHandle: "7-bottom",
+    target: "p7-1",
+    targetHandle: "p7-1-top",
+    type: "smoothstep",
+  },
+  {
+    id: "e7-p7-2",
+    source: "7",
+    sourceHandle: "7-bottom",
+    target: "p7-2",
+    targetHandle: "p7-2-top",
+    type: "smoothstep",
+  },
+  {
+    id: "e7-p7-3",
+    source: "7",
+    sourceHandle: "7-bottom",
+    target: "p7-3",
+    targetHandle: "p7-3-top",
     type: "smoothstep",
   },
 ]);
