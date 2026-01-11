@@ -10,26 +10,55 @@
           <div class="relative mb-4">
             <img
               src="/img/pp-fb.png"
-              alt="Logo"
-              class="inline-flex items-center justify-center w-40 h-40 bg-blue text-white rounded-full mx-auto text-xl font-bold shadow-md"
+              alt="Félix Berger"
+              class="inline-flex items-center justify-center w-40 h-40 rounded-full mx-auto shadow-md object-cover"
             />
+            <!-- Status indicator -->
+            <div
+              class="absolute bottom-2 right-1/2 translate-x-[70px] w-5 h-5 bg-green rounded-full border-4 border-white shadow-lg"
+            ></div>
           </div>
+
           <!-- Contact bar -->
           <div class="flex justify-center gap-5 mt-4">
             <slot name="contact-bar"></slot>
           </div>
+
+          <!-- Name -->
           <h1
-            class="text-3xl md:text-4xl font-extrabold text-blue leading-tight my-1"
+            class="text-3xl md:text-4xl font-extrabold text-blue leading-tight my-4"
           >
             Félix Berger
           </h1>
-          <p class="text-lg text-gray mb-4">
-            Team lead | Développeur Full-stack | Chef de projet technique
-          </p>
+
+          <!-- Role -->
+          <div class="flex flex-wrap justify-center gap-3 mb-6">
+            <span
+              class="px-5 py-2 bg-blue/10 text-blue rounded-full font-bold text-base border border-blue/20"
+            >
+              Team lead
+            </span>
+            <span
+              class="px-5 py-2 bg-blue/10 text-blue rounded-full font-bold text-base border border-blue/20"
+            >
+              Développeur Full-stack
+            </span>
+            <span
+              class="px-5 py-2 bg-blue/10 text-blue rounded-full font-bold text-base border border-blue/20"
+            >
+              Chef de projet technique
+            </span>
+          </div>
+
+          <!-- Description -->
           <slot name="description"></slot>
+
+          <!-- Skills -->
           <div class="mt-8 flex flex-wrap justify-center gap-3 mb-6">
             <slot name="skills"></slot>
           </div>
+
+          <!-- CTA Buttons -->
           <div class="flex items-center justify-center gap-4 mt-8">
             <slot name="cta-buttons"></slot>
           </div>
@@ -38,3 +67,20 @@
     </div>
   </section>
 </template>
+
+<style scoped>
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.6s ease both;
+}
+</style>
