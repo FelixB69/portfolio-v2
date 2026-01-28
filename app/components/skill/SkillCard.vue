@@ -1,7 +1,5 @@
 <template>
-  <div
-    class="skill-card group relative bg-white/90 backdrop-blur-sm rounded-2xl p-6 md:p-8 shadow-lg border border-white/50 transition-all duration-500 hover:shadow-2xl hover:-translate-y-2"
-  >
+  <div class="skill-card group relative glass-card p-6 md:p-8 hover-lift">
     <!-- Decorative gradient corner -->
     <div
       class="absolute top-0 left-0 w-24 h-24 bg-gradient-to-br from-blue/5 to-transparent rounded-br-full pointer-events-none"
@@ -59,8 +57,8 @@ const props = defineProps<{
 const tagsArr = Array.isArray(props.tags)
   ? props.tags
   : props.tags
-  ? String(props.tags).split(",")
-  : [];
+    ? String(props.tags).split(",")
+    : [];
 
 function tagColor(tag: string) {
   return getTagColorClass(tag);

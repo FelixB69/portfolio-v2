@@ -1,5 +1,5 @@
 <template>
-  <div class="min-h-screen bg-gray-light text-gray-dark font-sans">
+  <div class="min-h-screen text-gray-dark font-sans">
     <Header @scroll-to="scrollToSection" />
     <main class="pt-20">
       <HeroSection>
@@ -13,14 +13,6 @@
 
         <template #skills>
           <HeroSkills />
-        </template>
-
-        <template #cta-buttons>
-          <HeroCTAs
-            :on-projets="onScrollToProjets"
-            :on-competences="onScrollToCompetences"
-            class="cta-buttons"
-          />
         </template>
       </HeroSection>
 
@@ -161,12 +153,11 @@ import Skills from "../components/skill/Skills.vue";
 import HeroContactBar from "../components/intro/IntroContactBar.vue";
 import HeroDescription from "../components/intro/IntroDescription.vue";
 import HeroSkills from "../components/intro/IntroSkills.vue";
-import HeroCTAs from "../components/intro/IntroCTAs.vue";
 import ProjectCard from "../components/project/ProjectCard.vue";
 import CompetenceCard from "../components/skill/SkillCard.vue";
 
 const CareerFlowLazy = defineAsyncComponent(
-  () => import("../components/flow/CareerFlow.vue")
+  () => import("../components/flow/CareerFlow.vue"),
 );
 
 const flowContainer = ref<HTMLElement | null>(null);
@@ -183,7 +174,7 @@ onMounted(() => {
         }
       }
     },
-    { root: null, rootMargin: "300px", threshold: 0.01 }
+    { root: null, rootMargin: "300px", threshold: 0.01 },
   );
 
   if (flowContainer.value) observer.observe(flowContainer.value);

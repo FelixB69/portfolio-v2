@@ -1,6 +1,6 @@
 <template>
   <article
-    class="project-card group relative rounded-2xl overflow-hidden bg-white shadow-lg transition-all duration-500 hover:shadow-2xl hover:-translate-y-2"
+    class="project-card group relative glass-card overflow-hidden hover-lift transition-all duration-500"
   >
     <!-- Image container -->
     <div class="relative h-56 md:h-64 overflow-hidden">
@@ -81,8 +81,8 @@ const props = defineProps<{
 const normalizedTags = Array.isArray(props.tags)
   ? props.tags
   : props.tags
-  ? String(props.tags).split(",")
-  : [];
+    ? String(props.tags).split(",")
+    : [];
 
 function tagClass(tag: string) {
   return getTagColorClass(tag);

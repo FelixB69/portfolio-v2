@@ -5,11 +5,11 @@
   >
     <div class="container mx-auto px-4 md:px-6 max-w-[1200px]">
       <div
-        class="flex items-center justify-between rounded-2xl px-4 md:px-6 py-3 transition-all duration-500"
+        class="flex items-center justify-between rounded-full px-5 py-3 transition-all duration-500"
         :class="
           scrolled
-            ? 'bg-white/90 backdrop-blur-2xl shadow-lg shadow-gray-dark/8 border border-white/60'
-            : 'bg-white/70 backdrop-blur-xl border border-white/40'
+            ? 'bg-white/50 backdrop-blur-2xl shadow-sm border border-white/20'
+            : 'bg-white/5 backdrop-blur-sm border border-white/5'
         "
       >
         <!-- Logo -->
@@ -52,7 +52,7 @@
           <a
             href="/CV - Félix BERGER.pdf"
             download
-            class="btn-download hidden md:inline-flex items-center gap-3 px-6 py-3 rounded-full text-[14px] font-semibold text-white bg-pink shadow hover:scale-105 transition transform"
+            class="hidden md:inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-semibold text-white bg-gradient-to-r from-pink to-pink-light shadow-md hover:shadow-lg hover:scale-105 transition-all duration-300"
           >
             <span>Télécharger mon CV</span>
           </a>
@@ -97,14 +97,14 @@
         <div
           v-show="isOpen"
           id="mobile-menu"
-          class="md:hidden mt-3 bg-white/98 backdrop-blur-2xl rounded-2xl shadow-2xl shadow-gray-dark/15 border border-white/60 overflow-hidden"
+          class="md:hidden mt-3 glass-card-strong overflow-hidden"
         >
           <div class="p-5 flex flex-col gap-1">
             <button
               v-for="(item, index) in navItems"
               :key="item.id"
               @click="goTo(item.id)"
-              class="mobile-nav-item flex items-center gap-4 px-4 py-4 rounded-xl text-left font-medium text-gray-dark/80 hover:text-gray-dark hover:bg-gradient-to-r hover:from-gray-light hover:to-white transition-all duration-300 cursor-pointer"
+              class="mobile-nav-item flex items-center gap-4 px-4 py-4 rounded-xl text-left font-medium text-gray-dark/80 hover:text-gray-dark hover:bg-white/50 transition-all duration-300 cursor-pointer"
               :style="{ animationDelay: `${index * 0.05}s` }"
             >
               <span class="w-2 h-2 rounded-full bg-blue"></span>
@@ -120,7 +120,7 @@
             <a
               href="/CV - Félix BERGER.pdf"
               download
-              class="flex items-center justify-center gap-3 px-5 py-4 rounded-xl text-[15px] font-semibold text-white bg-pink shadow hover:scale-105 transition transform"
+              class="flex items-center justify-center gap-3 px-5 py-4 rounded-xl text-[15px] font-semibold text-white bg-gradient-to-r from-pink to-pink-light shadow-lg hover:scale-105 transition transform"
             >
               <span>Télécharger mon CV</span>
             </a>

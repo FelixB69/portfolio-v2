@@ -17,9 +17,16 @@
 
     <div class="relative z-10">
       <!-- Section header -->
-      <div class="flex items-center gap-4 mb-10 animate-fade-in-up">
-        <div class="w-1.5 h-10 bg-blue rounded-full"></div>
-        <h2 class="text-3xl md:text-4xl font-bold text-blue">
+      <div class="flex items-center gap-3 mb-10 animate-fade-in-up">
+        <div class="relative flex items-center justify-center w-5 h-5">
+          <div
+            class="absolute inset-0 bg-blue/30 rounded-full animate-ping opacity-75"
+          ></div>
+          <div
+            class="relative w-2 h-2 bg-blue rounded-full shadow-[0_0_8px_rgba(38,84,124,0.6)]"
+          ></div>
+        </div>
+        <h2 class="text-3xl md:text-4xl font-bold gradient-text pb-1">
           Mes compétences
         </h2>
       </div>

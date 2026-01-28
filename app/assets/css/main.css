@@ -20,26 +20,27 @@
   --color-white: #ffffff;
   --color-red: #ff0000;
 
-  /* Modern gradients */
+  /* Modern gradients using Base Colors */
   --gradient-hero: linear-gradient(
     135deg,
     #f8fafc 0%,
     #e2e8f0 50%,
     #f8fafc 100%
   );
+  --gradient-brand: linear-gradient(135deg, #26547c 0%, #ef476f 100%);
   --gradient-blue: linear-gradient(135deg, #26547c 0%, #3a6d9c 100%);
   --gradient-pink: linear-gradient(135deg, #ef476f 0%, #f26b8a 100%);
   --gradient-green: linear-gradient(135deg, #06d6a0 0%, #2be0b3 100%);
   --gradient-card: linear-gradient(
     145deg,
-    rgba(255, 255, 255, 0.9) 0%,
-    rgba(255, 255, 255, 0.7) 100%
+    rgba(255, 255, 255, 0.6) 0%,
+    rgba(255, 255, 255, 0.4) 100%
   );
 
   /* Shadows */
-  --shadow-soft: 0 4px 20px rgba(39, 52, 68, 0.08);
-  --shadow-medium: 0 8px 32px rgba(39, 52, 68, 0.12);
-  --shadow-strong: 0 16px 48px rgba(39, 52, 68, 0.16);
+  --shadow-soft: 0 4px 24px -1px rgba(39, 52, 68, 0.05);
+  --shadow-medium: 0 12px 32px -4px rgba(39, 52, 68, 0.1);
+  --shadow-strong: 0 20px 48px -8px rgba(39, 52, 68, 0.15);
   --shadow-glow-pink: 0 8px 32px rgba(239, 71, 111, 0.25);
   --shadow-glow-blue: 0 8px 32px rgba(38, 84, 124, 0.25);
   --shadow-glow-green: 0 8px 32px rgba(6, 214, 160, 0.25);
@@ -55,8 +56,16 @@ html {
 
 body {
   font-family: var(--font-display);
-  background: linear-gradient(180deg, #f8fafc 0%, #f1f5f9 100%);
+  background-color: #f8fafc;
+  background-image: 
+    radial-gradient(at 0% 0%, rgba(38, 84, 124, 0.08) 0px, transparent 50%),
+    radial-gradient(at 100% 0%, rgba(239, 71, 111, 0.08) 0px, transparent 50%),
+    radial-gradient(at 100% 100%, rgba(6, 214, 160, 0.08) 0px, transparent 50%),
+    radial-gradient(at 0% 100%, rgba(255, 209, 102, 0.08) 0px, transparent 50%);
+  background-attachment: fixed;
   min-height: 100vh;
+  color: #273444;
+  -webkit-font-smoothing: antialiased;
 }
 
 /* Selection styling */
@@ -71,16 +80,17 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: #f1f5f9;
+  background: transparent;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, #26547c 0%, #3a6d9c 100%);
+  background: rgba(39, 52, 68, 0.2);
   border-radius: 5px;
+  border: 2px solid #f8fafc;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #1a3a54;
+  background: rgba(39, 52, 68, 0.3);
 }
 
 /* Modern animations */
@@ -244,29 +254,38 @@ body {
   animation-delay: 0.6s;
 }
 
-/* Modern card styles */
+/* Modern card styles - LIQUID GLASS APPLE STYLE */
 .glass-card {
-  background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  box-shadow: 0 8px 32px rgba(39, 52, 68, 0.1);
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 
+    0 4px 6px -1px rgba(0, 0, 0, 0.05),
+    0 10px 15px -3px rgba(0, 0, 0, 0.05),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.2);
+  border-radius: 24px;
 }
 
 .glass-card-strong {
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(24px);
-  -webkit-backdrop-filter: blur(24px);
-  border: 1px solid rgba(255, 255, 255, 0.5);
-  box-shadow: 0 16px 48px rgba(39, 52, 68, 0.12);
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(25px) saturate(180%);
+  -webkit-backdrop-filter: blur(25px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  box-shadow: 
+    0 10px 25px -5px rgba(0, 0, 0, 0.1), 
+    0 8px 10px -6px rgba(0, 0, 0, 0.1),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.3);
+    border-radius: 32px;
 }
 
 /* Gradient text utility */
 .gradient-text {
-  background: linear-gradient(135deg, #26547c 0%, #3a6d9c 50%, #06d6a0 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: var(--color-blue);
+  /* background: linear-gradient(135deg, #26547c 0%, #3a6d9c 50%, #06d6a0 100%); */
+  /* -webkit-background-clip: text; */
+  /* -webkit-text-fill-color: transparent; */
+  /* background-clip: text; */
 }
 
 .gradient-text-pink {
@@ -278,16 +297,16 @@ body {
 
 /* Hover effects */
 .hover-lift {
-  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 .hover-lift:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 20px 40px rgba(39, 52, 68, 0.15);
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(39, 52, 68, 0.08);
 }
 
 .hover-scale {
-  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 .hover-scale:hover {
@@ -314,27 +333,12 @@ body {
 .btn-modern {
   position: relative;
   overflow: hidden;
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+  border-radius: 9999px;
 }
 
-.btn-modern::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(255, 255, 255, 0.2),
-    transparent
-  );
-  transition: left 0.5s ease;
-}
-
-.btn-modern:hover::before {
-  left: 100%;
+.btn-modern:active {
+  transform: scale(0.96);
 }
 
 /* Section dividers */
@@ -343,7 +347,7 @@ body {
   background: linear-gradient(
     90deg,
     transparent,
-    rgba(38, 84, 124, 0.1),
+    rgba(39, 52, 68, 0.05),
     transparent
   );
   margin: 4rem 0;
@@ -353,7 +357,7 @@ body {
 a:focus-visible,
 button:focus-visible {
   outline: 2px solid #26547c;
-  outline-offset: 4px;
+  outline-offset: 2px;
   border-radius: 4px;
 }
 
@@ -363,17 +367,30 @@ button:focus-visible {
   color: #26547c;
   text-decoration: none;
   font-weight: 500;
+  transition: color 0.2s;
 }
 
 .link-modern::after {
   content: "";
   position: absolute;
-  bottom: -2px;
+  bottom: 0px;
   left: 0;
   width: 0;
-  height: 2px;
-  background: linear-gradient(90deg, #ef476f, #26547c);
+  height: 1.5px;
+  background: #26547c;
   transition: width 0.3s ease;
+  border-radius: 1px;
+}
+
+/* Hover effects */
+.hover-lift {
+  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.hover-lift:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(39, 52, 68, 0.08);
+
 }
 
 .link-modern:hover::after {
