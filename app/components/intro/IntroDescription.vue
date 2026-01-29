@@ -11,5 +11,10 @@
       renouvelables. Je pilote et développe des projets IT stratégiques, de la
       réflexion à l'exécution.
     </p>
+    <p class="text-md text-gray mb-4">
+      En parallèle de mes missions, je développe une application web en
+      freelance pour le compte de l'association <b>Kiweeto</b> qui oeuvre pour
+      le bien-être animal.
+    </p>
   </div>
 </template>

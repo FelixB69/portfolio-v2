@@ -164,22 +164,19 @@ const flowContainer = ref<HTMLElement | null>(null);
 const showFlow = ref(false);
 
 onMounted(() => {
-  const observer = new IntersectionObserver(
-    (entries) => {
-      for (const entry of entries) {
-        if (entry.isIntersecting) {
-          showFlow.value = true;
-          observer.disconnect();
-          break;
-        }
-      }
-    },
-    { root: null, rootMargin: "300px", threshold: 0.01 },
-  );
+  const preloadDelay = 1500;
 
-  if (flowContainer.value) observer.observe(flowContainer.value);
-
-  onUnmounted(() => observer.disconnect());
+  if (typeof window.requestIdleCallback === "function") {
+    window.requestIdleCallback(() => {
+      setTimeout(() => {
+        showFlow.value = true;
+      }, preloadDelay);
+    });
+  } else {
+    setTimeout(() => {
+      showFlow.value = true;
+    }, preloadDelay);
+  }
 });
 
 function smoothScrollTo(selector: string) {
