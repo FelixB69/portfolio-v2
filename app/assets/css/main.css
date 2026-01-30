@@ -46,7 +46,31 @@
   --shadow-glow-green: 0 8px 32px rgba(6, 214, 160, 0.25);
 
   /* Typography */
-  --font-display: "Inter", system-ui, -apple-system, sans-serif;
+  --font-inter: "Inter", system-ui, -apple-system, sans-serif;
+  --font-playfair: "Playfair Display", Georgia, serif;
+  --font-outfit: "Outfit", sans-serif;
+
+  --font-display: var(--font-inter);
+  --font-sans: var(--font-display);
+}
+
+/* Font theme overrides */
+.font-theme-inter {
+  --font-display: var(--font-inter);
+  --font-sans: var(--font-inter);
+  font-family: var(--font-display);
+}
+
+.font-theme-playfair {
+  --font-display: var(--font-playfair);
+  --font-sans: var(--font-playfair);
+  font-family: var(--font-display);
+}
+
+.font-theme-outfit {
+  --font-display: var(--font-outfit);
+  --font-sans: var(--font-outfit);
+  font-family: var(--font-display);
 }
 
 /* Base styles */

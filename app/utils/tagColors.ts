@@ -44,7 +44,7 @@ export const getTagColorClass = (tag: string): string => {
     lower.includes("api") ||
     lower.includes("tensor")
   ) {
-    return "bg-green text-white font-medium";
+    return "bg-green text-gray-dark font-medium";
   }
 
   // Infrastructure / Architecture / CI-CD / Quality
@@ -59,7 +59,7 @@ export const getTagColorClass = (tag: string): string => {
     lower.includes("pca") ||
     lower.includes("si")
   ) {
-    return "bg-orange text-gray-dark font-medium";
+    return "bg-blue text-white font-medium";
   }
 
   // Default color if no match
