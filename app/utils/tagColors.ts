@@ -10,9 +10,11 @@ export const getTagColorClass = (tag: string): string => {
     lower.includes("freelance") ||
     lower.includes("pilotage") ||
     lower.includes("management") ||
-    lower.includes("full-stack")
+    lower.includes("full-stack") ||
+    lower.includes("ux") ||
+    lower.includes("ui")
   ) {
-    return "bg-blue text-white font-medium";
+    return "bg-blue/10 text-blue font-medium border border-blue/20 shadow-sm";
   }
 
   // Frontend / Design / UX / Real-time interactive
@@ -20,15 +22,13 @@ export const getTagColorClass = (tag: string): string => {
     lower.includes("react") ||
     lower.includes("next") ||
     lower.includes("angular") ||
-    lower.includes("ux") ||
-    lower.includes("ui") ||
     lower.includes("tailwind") ||
     lower.includes("css") ||
     lower.includes("html") ||
     lower.includes("front") ||
     lower.includes("socket")
   ) {
-    return "bg-pink text-white font-medium";
+    return "bg-pink/10 text-pink font-medium border border-pink/20 shadow-sm";
   }
 
   // Backend / Languages / Database / Data
@@ -44,7 +44,7 @@ export const getTagColorClass = (tag: string): string => {
     lower.includes("api") ||
     lower.includes("tensor")
   ) {
-    return "bg-green text-gray-dark font-medium";
+    return "bg-green/10 text-green-dark font-medium border border-green/20 shadow-sm";
   }
 
   // Infrastructure / Architecture / CI-CD / Quality
@@ -59,9 +59,9 @@ export const getTagColorClass = (tag: string): string => {
     lower.includes("pca") ||
     lower.includes("si")
   ) {
-    return "bg-blue text-white font-medium";
+    return "bg-blue/10 text-blue font-medium border border-blue/20 shadow-sm";
   }
 
   // Default color if no match
-  return "bg-gray text-white font-medium";
+  return "bg-gray/10 text-gray font-medium border border-gray/20 shadow-sm";
 };

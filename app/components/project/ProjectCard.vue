@@ -7,7 +7,7 @@
       <img
         :src="image"
         :alt="alt"
-        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
       />
       <!-- Gradient overlay -->
       <div
@@ -44,7 +44,7 @@
           v-for="(t, i) in normalizedTags"
           :key="i"
           :class="tagClass(t)"
-          class="tag-item px-3 py-1.5 rounded-full text-xs font-semibold transition-all duration-300 hover:scale-105"
+          class="tag-item px-3 py-1.5 rounded-full text-xs font-semibold transition-all duration-300 hover:scale-105 hover:shadow-md"
           :style="{ animationDelay: `${i * 0.05}s` }"
         >
           {{ t }}

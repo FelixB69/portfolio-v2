@@ -6,17 +6,9 @@
       @click="isOpen = false"
     >
       <div
-        class="relative w-full h-full md:h-auto md:w-full max-w-none md:max-w-2xl p-6 pt-24 md:p-8 md:pt-10 space-y-5 md:space-y-5 text-center bg-white md:shadow-2xl md:rounded-3xl md:border border-gray-100 mx-0 md:mx-4 overflow-y-auto md:overflow-visible"
+        class="relative w-full h-full md:h-auto md:w-full md:max-w-2xl p-6 pt-20 md:p-10 space-y-3 md:space-y-6 text-center bg-white md:shadow-2xl md:rounded-3xl md:border border-gray-100 mx-0 md:mx-auto flex flex-col"
         @click.stop
       >
-        <div class="absolute top-6 left-6 md:top-8 md:left-8 md:block">
-          <img
-            src="/img/logo-fb.png"
-            alt="Logo"
-            class="h-8 w-8 md:h-10 md:w-10 object-contain rounded-xl opacity-90"
-          />
-        </div>
-
         <!-- Mobile Close Button -->
         <button
           @click="isOpen = false"
@@ -25,14 +17,14 @@
           <UIcon name="i-heroicons-x-mark" class="w-6 h-6" />
         </button>
         <!-- Header -->
-        <div class="space-y-2 md:space-y-2 animate-fade-in-up">
+        <div class="space-y-2 md:space-y-4 flex flex-col items-center">
           <h1
-            class="text-lg md:text-2xl font-bold text-gray-900 !leading-tight"
+            class="text-base md:text-lg font-bold text-gray-900 !leading-tight"
           >
             Bienvenue sur mon Portfolio
           </h1>
           <p
-            class="text-xs md:text-sm text-gray-500 max-w-sm md:max-w-lg mx-auto !leading-relaxed min-h-[32px] md:min-h-[40px] flex items-center justify-center"
+            class="text-xs md:text-sm text-gray-500 max-w-xs md:max-w-md mx-auto !leading-relaxed flex items-center justify-center"
           >
             À travers ce site aux fonctionnalités simples, j’aimerais vous faire
             vivre une expérience unique. Je vous invite à personnaliser
@@ -41,13 +33,13 @@
         </div>
 
         <!-- Theme Grid -->
-        <div class="space-y-2 md:space-y-2 animate-fade-in-up delay-100">
+        <div class="space-y-2 md:space-y-4">
           <h3
-            class="text-xs md:text-sm font-semibold text-gray-500 uppercase tracking-widest"
+            class="text-[10px] md:text-xs font-semibold text-gray-500 uppercase tracking-widest"
           >
             Thème
           </h3>
-          <div class="grid grid-cols-2 gap-2 md:gap-3">
+          <div class="grid grid-cols-2 gap-5">
             <button
               v-for="theme in themes"
               :key="theme.id"
@@ -69,18 +61,18 @@
 
               <!-- Color Bubbles -->
               <div
-                class="flex justify-center -space-x-2 md:-space-x-3 mb-2 md:mb-3"
+                class="flex justify-center -space-x-2 md:-space-x-3 mb-1.5 md:mb-2"
               >
                 <div
-                  class="w-7 h-7 md:w-10 md:h-10 rounded-full shadow-sm border-2 border-white transition-transform group-hover:-translate-y-1"
+                  class="w-6 h-6 md:w-8 md:h-8 rounded-full shadow-sm border-2 border-white transition-transform group-hover:-translate-y-1"
                   :style="{ backgroundColor: theme.colors.blue }"
                 ></div>
                 <div
-                  class="w-7 h-7 md:w-10 md:h-10 rounded-full shadow-sm border-2 border-white transition-transform group-hover:-translate-y-1 delay-75"
+                  class="w-6 h-6 md:w-8 md:h-8 rounded-full shadow-sm border-2 border-white transition-transform group-hover:-translate-y-1 delay-75"
                   :style="{ backgroundColor: theme.colors.pink }"
                 ></div>
                 <div
-                  class="w-7 h-7 md:w-10 md:h-10 rounded-full shadow-sm border-2 border-white transition-transform group-hover:-translate-y-1 delay-150"
+                  class="w-6 h-6 md:w-8 md:h-8 rounded-full shadow-sm border-2 border-white transition-transform group-hover:-translate-y-1 delay-150"
                   :style="{ backgroundColor: theme.colors.green }"
                 ></div>
               </div>
@@ -99,13 +91,13 @@
         </div>
 
         <!-- Typography Section -->
-        <div class="space-y-2 md:space-y-2 animate-fade-in-up delay-150">
+        <div class="space-y-2 md:space-y-4">
           <h3
-            class="text-xs md:text-sm font-semibold text-gray-500 uppercase tracking-widest"
+            class="text-[10px] md:text-xs font-semibold text-gray-500 uppercase tracking-widest"
           >
             Typographie
           </h3>
-          <div class="grid grid-cols-3 gap-2 md:gap-2">
+          <div class="grid grid-cols-3 gap-2">
             <button
               v-for="font in fonts"
               :key="font.id"
@@ -121,7 +113,7 @@
                 class="text-base md:text-lg"
                 :style="{ fontFamily: font.family }"
               >
-                Ag
+                {{ font.preview }}
               </div>
               <div class="text-[10px] md:text-xs font-medium mt-0.5 md:mt-1">
                 {{ font.name }}
@@ -131,12 +123,12 @@
         </div>
 
         <!-- Footer Action -->
-        <div class="animate-fade-in-up delay-200 mt-5 md:mt-6">
+        <div class="mt-2 md:mt-8">
           <UButton
             size="md"
             color="black"
             variant="solid"
-            class="cursor-pointer px-6 py-2 md:px-8 md:py-2.5 rounded-full text-sm md:text-base font-semibold shadow-lg hover:shadow-xl transition-all"
+            class="cursor-pointer px-5 py-1.5 md:px-6 md:py-2 rounded-full text-xs md:text-sm font-semibold shadow-lg hover:shadow-xl transition-all"
             @click="confirmTheme"
             :disabled="!selectedTheme"
           >
@@ -229,6 +221,7 @@ interface Font {
   name: string;
   family: string;
   class: string;
+  preview: string;
 }
 
 const selectedFont = ref<Font | null>(null);
@@ -239,18 +232,21 @@ const fonts: Font[] = [
     name: "Standard",
     family: "var(--font-inter)",
     class: "font-theme-inter",
+    preview: "Félix",
   },
   {
     id: "playfair",
     name: "Élégant",
     family: "var(--font-playfair)",
     class: "font-theme-playfair",
+    preview: "Berger",
   },
   {
     id: "outfit",
     name: "Moderne",
     family: "var(--font-outfit)",
     class: "font-theme-outfit",
+    preview: "Dev",
   },
 ];
 

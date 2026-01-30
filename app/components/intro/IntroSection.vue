@@ -38,17 +38,17 @@
           <!-- Role -->
           <div class="flex flex-wrap justify-center gap-3 mb-5">
             <span
-              class="px-5 py-2 glass-card text-blue rounded-full font-bold text-base hover:scale-105 transition-transform cursor-default"
+              class="px-5 py-2 bg-blue/10 text-blue border border-blue/20 shadow-sm backdrop-blur-md rounded-full font-bold text-base transition-all duration-300 hover:scale-105 hover:shadow-md cursor-default"
             >
               Team lead
             </span>
             <span
-              class="px-5 py-2 glass-card text-pink rounded-full font-bold text-base hover:scale-105 transition-transform cursor-default"
+              class="px-5 py-2 bg-blue/10 text-blue border border-blue/20 shadow-sm backdrop-blur-md rounded-full font-bold text-base transition-all duration-300 hover:scale-105 hover:shadow-md cursor-default"
             >
               Développeur Full-stack
             </span>
             <span
-              class="px-5 py-2 glass-card text-pink rounded-full font-bold text-base hover:scale-105 transition-transform cursor-default"
+              class="px-5 py-2 bg-blue/10 text-blue border border-blue/20 shadow-sm backdrop-blur-md rounded-full font-bold text-base transition-all duration-300 hover:scale-105 hover:shadow-md cursor-default"
             >
               Chef de projet technique
             </span>
