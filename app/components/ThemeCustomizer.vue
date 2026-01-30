@@ -3,26 +3,36 @@
     <div
       v-if="isOpen"
       class="fixed inset-0 z-[100] flex items-center justify-center bg-white/60 backdrop-blur-md transition-all duration-500"
+      @click="isOpen = false"
     >
       <div
-        class="relative w-full max-w-2xl p-10 space-y-8 text-center bg-white shadow-2xl rounded-3xl border border-gray-100 mx-4"
+        class="relative w-full h-full md:h-auto md:w-full max-w-none md:max-w-2xl p-6 pt-24 md:p-8 md:pt-10 space-y-5 md:space-y-5 text-center bg-white md:shadow-2xl md:rounded-3xl md:border border-gray-100 mx-0 md:mx-4 overflow-y-auto md:overflow-visible"
+        @click.stop
       >
-        <div class="absolute top-8 left-8 hidden md:block">
+        <div class="absolute top-6 left-6 md:top-8 md:left-8 md:block">
           <img
             src="/img/logo-fb.png"
             alt="Logo"
-            class="h-10 w-10 object-contain rounded-xl opacity-90"
+            class="h-8 w-8 md:h-10 md:w-10 object-contain rounded-xl opacity-90"
           />
         </div>
+
+        <!-- Mobile Close Button -->
+        <button
+          @click="isOpen = false"
+          class="absolute top-6 right-6 p-2 text-gray-500 hover:text-gray-700 focus:outline-none md:hidden"
+        >
+          <UIcon name="i-heroicons-x-mark" class="w-6 h-6" />
+        </button>
         <!-- Header -->
-        <div class="space-y-3 animate-fade-in-up">
+        <div class="space-y-2 md:space-y-2 animate-fade-in-up">
           <h1
-            class="text-xl md:text-2xl font-bold text-gray-900 !leading-tight"
+            class="text-lg md:text-2xl font-bold text-gray-900 !leading-tight"
           >
             Bienvenue sur mon Portfolio
           </h1>
           <p
-            class="text-sm text-gray-500 max-w-lg mx-auto !leading-relaxed min-h-[40px] flex items-center justify-center"
+            class="text-xs md:text-sm text-gray-500 max-w-sm md:max-w-lg mx-auto !leading-relaxed min-h-[32px] md:min-h-[40px] flex items-center justify-center"
           >
             À travers ce site aux fonctionnalités simples, j’aimerais vous faire
             vivre une expérience unique. Je vous invite à personnaliser
@@ -31,18 +41,18 @@
         </div>
 
         <!-- Theme Grid -->
-        <div class="space-y-3 animate-fade-in-up delay-100">
+        <div class="space-y-2 md:space-y-2 animate-fade-in-up delay-100">
           <h3
-            class="text-sm font-semibold text-gray-500 uppercase tracking-widest"
+            class="text-xs md:text-sm font-semibold text-gray-500 uppercase tracking-widest"
           >
             Thème
           </h3>
-          <div class="grid grid-cols-2 gap-4">
+          <div class="grid grid-cols-2 gap-2 md:gap-3">
             <button
               v-for="theme in themes"
               :key="theme.id"
               @click="selectTheme(theme)"
-              class="cursor-pointer group relative p-4 rounded-2xl border-2 transition-all duration-300 hover:scale-[1.02]"
+              class="cursor-pointer group relative p-3 md:p-3 rounded-2xl border-2 transition-all duration-300 hover:scale-[1.02]"
               :class="[
                 selectedTheme?.id === theme.id
                   ? 'border-gray-900 bg-white shadow-lg scale-[1.02]'
@@ -58,26 +68,30 @@
               </div>
 
               <!-- Color Bubbles -->
-              <div class="flex justify-center -space-x-3 mb-3">
+              <div
+                class="flex justify-center -space-x-2 md:-space-x-3 mb-2 md:mb-3"
+              >
                 <div
-                  class="w-10 h-10 rounded-full shadow-sm border-2 border-white transition-transform group-hover:-translate-y-1"
+                  class="w-7 h-7 md:w-10 md:h-10 rounded-full shadow-sm border-2 border-white transition-transform group-hover:-translate-y-1"
                   :style="{ backgroundColor: theme.colors.blue }"
                 ></div>
                 <div
-                  class="w-10 h-10 rounded-full shadow-sm border-2 border-white transition-transform group-hover:-translate-y-1 delay-75"
+                  class="w-7 h-7 md:w-10 md:h-10 rounded-full shadow-sm border-2 border-white transition-transform group-hover:-translate-y-1 delay-75"
                   :style="{ backgroundColor: theme.colors.pink }"
                 ></div>
                 <div
-                  class="w-10 h-10 rounded-full shadow-sm border-2 border-white transition-transform group-hover:-translate-y-1 delay-150"
+                  class="w-7 h-7 md:w-10 md:h-10 rounded-full shadow-sm border-2 border-white transition-transform group-hover:-translate-y-1 delay-150"
                   :style="{ backgroundColor: theme.colors.green }"
                 ></div>
               </div>
 
               <!-- Label -->
-              <h3 class="text-sm font-bold text-gray-900 mb-1">
+              <h3
+                class="text-xs md:text-sm font-bold text-gray-900 mb-0.5 md:mb-1"
+              >
                 {{ theme.name }}
               </h3>
-              <p class="text-[12px] text-gray-500 leading-tight">
+              <p class="text-[10px] md:text-[12px] text-gray-500 leading-tight">
                 {{ theme.description }}
               </p>
             </button>
@@ -85,44 +99,48 @@
         </div>
 
         <!-- Typography Section -->
-        <div class="space-y-3 animate-fade-in-up delay-150">
+        <div class="space-y-2 md:space-y-2 animate-fade-in-up delay-150">
           <h3
-            class="text-sm font-semibold text-gray-500 uppercase tracking-widest"
+            class="text-xs md:text-sm font-semibold text-gray-500 uppercase tracking-widest"
           >
             Typographie
           </h3>
-          <div class="grid grid-cols-3 gap-3">
+          <div class="grid grid-cols-3 gap-2 md:gap-2">
             <button
               v-for="font in fonts"
               :key="font.id"
               @click="selectFont(font)"
-              class="cursor-pointer px-4 py-3 rounded-xl border transition-all duration-200"
+              class="cursor-pointer px-3 py-2 md:px-3 md:py-2 rounded-xl border transition-all duration-200"
               :class="[
                 selectedFont?.id === font.id
                   ? 'border-gray-900 bg-gray-50 text-gray-900 shadow-sm'
                   : 'border-gray-200 text-gray-500 hover:border-gray-300 hover:bg-gray-50',
               ]"
             >
-              <div class="text-lg" :style="{ fontFamily: font.family }">Ag</div>
-              <div class="text-xs font-medium mt-1">{{ font.name }}</div>
+              <div
+                class="text-base md:text-lg"
+                :style="{ fontFamily: font.family }"
+              >
+                Ag
+              </div>
+              <div class="text-[10px] md:text-xs font-medium mt-0.5 md:mt-1">
+                {{ font.name }}
+              </div>
             </button>
           </div>
         </div>
 
         <!-- Footer Action -->
-        <div class="animate-fade-in-up delay-200 mt-8">
+        <div class="animate-fade-in-up delay-200 mt-5 md:mt-6">
           <UButton
-            size="lg"
+            size="md"
             color="black"
             variant="solid"
-            class="cursor-pointer px-8 py-2.5 rounded-full text-base font-semibold shadow-lg hover:shadow-xl transition-all"
+            class="cursor-pointer px-6 py-2 md:px-8 md:py-2.5 rounded-full text-sm md:text-base font-semibold shadow-lg hover:shadow-xl transition-all"
             @click="confirmTheme"
             :disabled="!selectedTheme"
           >
             Commencer l'expérience
-            <template #trailing>
-              <UIcon name="i-heroicons-arrow-right" class="w-4 h-4" />
-            </template>
           </UButton>
         </div>
       </div>
@@ -130,7 +148,7 @@
   </Transition>
 
   <!-- Re-open trigger -->
-  <div v-if="!isOpen" class="fixed bottom-6 right-6 z-40">
+  <div v-if="!isOpen" class="fixed bottom-8 right-6 z-50">
     <UButton
       icon="i-heroicons-paint-brush"
       color="white"
@@ -158,15 +176,6 @@ interface Theme {
 
 const isOpen = ref(false);
 const selectedTheme = ref<Theme | null>(null);
-
-// Prevent scrolling when popup is open
-watch(isOpen, (newValue) => {
-  if (newValue) {
-    document.body.style.overflow = "hidden";
-  } else {
-    document.body.style.overflow = "";
-  }
-});
 
 const themes: Theme[] = [
   {
