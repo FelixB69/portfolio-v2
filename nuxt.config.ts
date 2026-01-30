@@ -23,6 +23,21 @@ export default defineNuxtConfig({
           href: "https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap",
         },
       ],
+      script: [
+        {
+          async: true,
+          src: "https://www.googletagmanager.com/gtag/js?id=G-RBQ9RVP0QG",
+        },
+        {
+          innerHTML: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-RBQ9RVP0QG');
+          `,
+        },
+      ],
     },
   },
   compatibilityDate: "2025-07-15",
