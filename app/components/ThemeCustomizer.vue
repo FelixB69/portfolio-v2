@@ -6,7 +6,7 @@
       @click="isOpen = false"
     >
       <div
-        class="relative w-full h-full md:h-auto md:w-full md:max-w-2xl p-6 pt-20 md:p-10 space-y-3 md:space-y-6 text-center bg-white md:shadow-2xl md:rounded-3xl md:border border-gray-100 mx-0 md:mx-auto flex flex-col"
+        class="relative w-full h-full md:h-auto md:w-full md:max-w-2xl p-6 pt-20 md:p-10 space-y-3 md:space-y-2 text-center bg-white md:shadow-2xl md:rounded-3xl md:border border-gray-100 mx-0 md:mx-auto flex flex-col"
         @click.stop
       >
         <!-- Mobile Close Button -->
@@ -17,23 +17,23 @@
           <UIcon name="i-heroicons-x-mark" class="w-6 h-6" />
         </button>
         <!-- Header -->
-        <div class="space-y-2 md:space-y-4 flex flex-col items-center">
+        <div class="space-y-2 md:space-y-6 flex flex-col items-center md:mb-8">
           <h1
-            class="text-base md:text-lg font-bold text-gray-900 !leading-tight"
+            class="text-base md:text-md font-bold text-gray-900 !leading-tight"
           >
-            Bienvenue sur mon Portfolio
+            Développeur full-stack, moteur d’équipe à la croisée du code et du
+            produit
           </h1>
           <p
-            class="text-xs md:text-sm text-gray-500 max-w-xs md:max-w-md mx-auto !leading-relaxed flex items-center justify-center"
+            class="text-xs md:text-sm text-gray-500 max-w-xs md:min-w-xl mx-auto !leading-relaxed flex items-center justify-center"
           >
-            À travers ce site aux fonctionnalités simples, j’aimerais vous faire
-            vivre une expérience unique. Je vous invite à personnaliser
-            l’ambiance du site pour découvrir mon parcours à votre image.
+            Chaque parcours mérite une expérience adaptée. Choisissez une
+            ambiance pour explorer mon univers à votre image.
           </p>
         </div>
 
         <!-- Theme Grid -->
-        <div class="space-y-2 md:space-y-4">
+        <div class="space-y-2 md:space-y-6">
           <h3
             class="text-[10px] md:text-xs font-semibold text-gray-500 uppercase tracking-widest"
           >
@@ -91,7 +91,7 @@
         </div>
 
         <!-- Typography Section -->
-        <div class="space-y-2 md:space-y-4">
+        <div class="space-y-2 md:space-y-6">
           <h3
             class="text-[10px] md:text-xs font-semibold text-gray-500 uppercase tracking-widest"
           >
@@ -128,7 +128,9 @@
             size="md"
             color="black"
             variant="solid"
-            class="cursor-pointer px-5 py-1.5 md:px-6 md:py-2 rounded-full text-xs md:text-sm font-semibold shadow-lg hover:shadow-xl transition-all"
+            trailing-icon="i-heroicons-arrow-right-20-solid"
+            class="cursor-pointer px-5 py-1.5 md:px-6 md:py-2 rounded-full text-xs md:text-lg font-semibold shadow-lg hover:shadow-xl hover:scale-[1.02] active:scale-[0.98] transition-all text-white"
+            :style="{ backgroundColor: selectedTheme?.colors.pink }"
             @click="confirmTheme"
             :disabled="!selectedTheme"
           >
