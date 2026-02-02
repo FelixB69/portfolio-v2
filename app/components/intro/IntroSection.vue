@@ -52,6 +52,11 @@
             >
               Chef de projet technique
             </span>
+            <span
+              class="px-5 py-2 bg-blue/10 text-blue border border-blue/20 shadow-sm backdrop-blur-md rounded-full font-bold text-base transition-all duration-300 hover:scale-105 hover:shadow-md cursor-default"
+            >
+              Chef de produit IT
+            </span>
           </div>
 
           <!-- Description -->

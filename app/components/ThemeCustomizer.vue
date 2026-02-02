@@ -17,18 +17,17 @@
           <UIcon name="i-heroicons-x-mark" class="w-6 h-6" />
         </button>
         <!-- Header -->
-        <div class="space-y-2 md:space-y-6 flex flex-col items-center md:mb-8">
-          <h1
-            class="text-base md:text-md font-bold text-gray-900 !leading-tight"
-          >
-            Développeur full-stack, moteur d’équipe à la croisée du code et du
-            produit
+        <div class="space-y-2 md:space-y-1 flex flex-col items-center md:mb-6">
+          <h1 class="text-md md:text-lg font-bold text-gray-900 !leading-tight">
+            Développeur full-stack, responsable d’équipe à la croisée du code et
+            du produit
           </h1>
           <p
             class="text-xs md:text-sm text-gray-500 max-w-xs md:min-w-xl mx-auto !leading-relaxed flex items-center justify-center"
           >
-            Chaque parcours mérite une expérience adaptée. Choisissez une
-            ambiance pour explorer mon univers à votre image.
+            Chaque parcours mérite une expérience adaptée. Pour cela, je vous
+            invite à choisir une ambiance pour explorer mon univers à votre
+            image.
           </p>
         </div>
 
