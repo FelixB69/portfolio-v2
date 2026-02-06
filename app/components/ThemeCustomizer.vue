@@ -17,17 +17,16 @@
           <UIcon name="i-heroicons-x-mark" class="w-6 h-6" />
         </button>
         <!-- Header -->
-        <div class="space-y-2 md:space-y-1 flex flex-col items-center md:mb-6">
+        <div class="space-y-2 md:space-y-3 flex flex-col items-center md:mb-6">
           <h1 class="text-md md:text-lg font-bold text-gray-900 !leading-tight">
-            Développeur full-stack, responsable d’équipe à la croisée du code et
-            du produit
+            Team leader, développeur full-stack, chef de projet : bienvenue chez
+            moi, entre la technique et le produit :)
           </h1>
           <p
             class="text-xs md:text-sm text-gray-500 max-w-xs md:min-w-xl mx-auto !leading-relaxed flex items-center justify-center"
           >
             Chaque parcours mérite une expérience adaptée. Pour cela, je vous
-            invite à choisir une ambiance pour explorer mon univers à votre
-            image.
+            invite à choisir un thème pour découvrir mon univers à votre image.
           </p>
         </div>
 
@@ -174,7 +173,7 @@ const themes: Theme[] = [
   {
     id: "default",
     name: "Classique",
-    description: "Élégant et professionnel, équilibré pour la lecture.",
+    description: "Élégant et professionnel",
     colors: {
       blue: "#26547c",
       pink: "#ef476f",
@@ -185,7 +184,7 @@ const themes: Theme[] = [
   {
     id: "sunset",
     name: "Lumineux",
-    description: "Chaleureux et énergique, pour en avoir plein les yeux.",
+    description: "Chaleureux et énergique",
     colors: {
       blue: "#6d4c41",
       pink: "#ff9f1c",
@@ -196,7 +195,7 @@ const themes: Theme[] = [
   {
     id: "neon",
     name: "Moderne",
-    description: "Moderne et audacieux, pour les amateurs de la tech.",
+    description: "Moderne et audacieux",
     colors: {
       blue: "#2b2d42",
       pink: "#f72585",
@@ -207,7 +206,7 @@ const themes: Theme[] = [
   {
     id: "forest",
     name: "Calme",
-    description: "Douceur et nature, pour une navigation apaisée.",
+    description: "Doux et naturel",
     colors: {
       blue: "#2d6a4f",
       pink: "#52b788",
