@@ -42,7 +42,12 @@ export const getTagColorClass = (tag: string): string => {
     lower.includes("firebase") ||
     lower.includes("postgres") ||
     lower.includes("api") ||
-    lower.includes("tensor")
+    lower.includes("tensor") ||
+    lower.includes("ollama") ||
+    lower.includes("mistral") ||
+    lower.includes("qwen") ||
+    lower.includes("llama") ||
+    lower.includes("llm")
   ) {
     return "bg-green/10 text-green-dark font-medium border border-green/20 shadow-sm";
   }

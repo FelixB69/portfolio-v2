@@ -1,9 +1,13 @@
 <template>
   <article
     class="project-card group relative glass-card overflow-hidden hover-lift transition-all duration-500"
+    :class="featured ? 'md:col-span-2 md:flex' : ''"
   >
     <!-- Image container -->
-    <div class="relative h-56 md:h-64 overflow-hidden">
+    <div
+      class="relative overflow-hidden"
+      :class="featured ? 'h-56 md:h-auto md:w-1/2' : 'h-56 md:h-64'"
+    >
       <img
         :src="image"
         :alt="alt"
@@ -27,14 +31,22 @@
     </div>
 
     <!-- Content -->
-    <div class="p-6 md:p-8">
+    <div
+      class="p-6 md:p-8"
+      :class="featured ? 'md:w-1/2 md:flex md:flex-col md:justify-center' : ''"
+    >
+
       <h3
-        class="text-xl md:text-2xl font-bold text-gray-dark mb-3 group-hover:text-blue transition-colors duration-300"
+        class="font-bold text-gray-dark mb-3 group-hover:text-blue transition-colors duration-300"
+        :class="featured ? 'text-2xl md:text-3xl' : 'text-xl md:text-2xl'"
       >
         {{ title }}
       </h3>
 
-      <p class="text-base text-gray leading-relaxed mb-5">
+      <p
+        class="text-gray leading-relaxed mb-5"
+        :class="featured ? 'text-base md:text-lg' : 'text-base'"
+      >
         <slot />
       </p>
 
@@ -76,6 +88,8 @@ const props = defineProps<{
   href: string;
   ariaLabel?: string;
   tags?: string[] | string;
+  featured?: boolean;
+  badge?: string;
 }>();
 
 const normalizedTags = Array.isArray(props.tags)

@@ -18,6 +18,21 @@
 
       <section id="projets">
         <Projects>
+          <!-- Project Fondio (featured) -->
+          <ProjectCard
+            featured
+            image="/img/fondio.png"
+            alt="Fondio"
+            title="Vous souhaitez menez un projet et avez besoin de conseils ? Découvrez Fondio"
+            href="https://fondio.felixberger.fr/"
+            :ariaLabel="'Ouvrir Fondio'"
+            :tags="['Next.js', 'React', 'Supabase', 'Ollama', 'Mistral', 'Qwen', 'Llama']"
+          >
+            Vos conseillers IA spécialisés, <b>100% confidentiels</b> car peuvent tourner en local sur nos serveurs.
+            Stratégie, finance, lancement, reconversion&nbsp;: des sessions
+            structurées avec livrables et mode challenger. Gestion de vos projets avec Kanban intégré et suivi de l'avancement.
+          </ProjectCard>
+
           <!-- Project Simulator -->
           <ProjectCard
             image="/img/project1.png"
