@@ -1,7 +1,11 @@
 {
   "permissions": {
     "allow": [
-      "WebFetch(domain:fondio.felixberger.fr)"
+      "WebFetch(domain:fondio.felixberger.fr)",
+      "Bash(python3 -c ' *)",
+      "Bash(ls -la ~/Downloads/ | grep -i \"CV\")",
+      "Read(//Users/felixberger/Downloads/**)",
+      "Bash(cp \"/Users/felixberger/Downloads/CV - Fe_lix BERGER V2.pdf\" \"/Users/felixberger/Documents/Projects/portfolio-v2/public/CV - Félix BERGER.pdf\")"
     ]
   }
 }
