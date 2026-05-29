@@ -1,8 +1,8 @@
 <template>
   <div>
     <p class="text-md text-gray mb-4">
-      Avec <b>7+ ans</b> d'expérience dans l'industrie logicielle et
-      <b>3+ ans</b> dans le développement web, j'accompagne les éditeurs dans la
+      Avec <b>8+ ans</b> d'expérience dans l'industrie logicielle et
+      <b>3.5+ ans</b> dans le développement web, j'accompagne les éditeurs dans la
       conception et la réalisation de projets à fort impact.
     </p>
     <p class="text-md text-gray mb-4">

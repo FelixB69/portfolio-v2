@@ -23,7 +23,7 @@
             featured
             image="/img/fondio.png"
             alt="Fondio"
-            title="Vous souhaitez menez un projet et avez besoin de conseils ? Découvrez Fondio"
+            title="Vous souhaitez mener un projet et avez besoin de conseils ? Découvrez Fondio"
             href="https://fondio.felixberger.fr/"
             :ariaLabel="'Ouvrir Fondio'"
             :tags="['Next.js', 'React', 'Supabase', 'Ollama', 'Mistral', 'Qwen', 'Llama']"
