@@ -181,8 +181,8 @@ const elements = ref([
     type: "experience",
     position: { x: 80, y: 220 },
     data: {
-      title: "Chargé de projet Marketing",
-      description: "Astrée Software - Communication digitale & Webmarketing",
+      title: "Chargé de projet Marketing Digital",
+      description: "Astrée Software - Marketing & Communication digitale",
       date: "Sept 2017 - Déc 2021",
     },
     draggable: true,
