@@ -13,7 +13,11 @@
         "
       >
         <!-- Logo -->
-        <a href="/" aria-label="Accueil" class="flex items-center gap-3 group">
+        <a
+          :href="localePath('/')"
+          :aria-label="t('header.home')"
+          class="flex items-center gap-3 group"
+        >
           <div class="relative">
             <img
               src="/img/logo-fb.png"
@@ -39,7 +43,7 @@
             class="nav-item relative px-5 py-2.5 rounded-full text-[15px] font-medium text-gray-dark/70 hover:text-gray-dark transition-all duration-300 group cursor-pointer"
             :style="{ animationDelay: `${index * 0.1}s` }"
           >
-            <span class="relative z-10">{{ item.label }}</span>
+            <span class="relative z-10">{{ t(item.labelKey) }}</span>
             <span
               class="absolute inset-0 rounded-full bg-white opacity-0 group-hover:opacity-100 shadow-md transition-all duration-300 scale-90 group-hover:scale-100"
             ></span>
@@ -48,13 +52,23 @@
 
         <!-- Actions -->
         <div class="flex items-center gap-3">
+          <!-- Language toggle (Desktop) -->
+          <button
+            type="button"
+            @click="toggleLocale"
+            :aria-label="t('header.switchLang')"
+            class="hidden md:inline-flex items-center justify-center w-10 h-10 rounded-full text-sm font-bold text-blue bg-blue/10 border border-blue/20 hover:bg-blue/20 hover:scale-105 transition-all duration-300 cursor-pointer uppercase"
+          >
+            {{ otherLocale }}
+          </button>
+
           <!-- CV Download Button (Desktop) -->
           <a
             href="/CV - Félix BERGER.pdf"
             download
             class="hidden md:inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-semibold text-white bg-gradient-to-r from-pink to-pink-light shadow-md hover:shadow-lg hover:scale-105 transition-all duration-300"
           >
-            <span>Télécharger mon CV</span>
+            <span>{{ t("header.downloadCv") }}</span>
           </a>
 
           <!-- Hamburger Mobile -->
@@ -64,9 +78,9 @@
             aria-controls="mobile-menu"
             class="md:hidden relative w-12 h-12 flex items-center justify-center rounded-xl bg-white/90 hover:bg-white border border-gray/10 shadow-sm hover:shadow-md transition-all duration-300 cursor-pointer"
           >
-            <span class="sr-only"
-              >{{ isOpen ? "Fermer" : "Ouvrir" }} le menu</span
-            >
+            <span class="sr-only">{{
+              isOpen ? t("header.closeMenu") : t("header.openMenu")
+            }}</span>
             <div class="w-5 h-4 flex flex-col justify-between">
               <span
                 class="w-full h-0.5 bg-gray-dark rounded-full transition-all duration-300 origin-left"
@@ -108,7 +122,7 @@
               :style="{ animationDelay: `${index * 0.05}s` }"
             >
               <span class="w-2 h-2 rounded-full bg-blue"></span>
-              <span class="text-lg">{{ item.label }}</span>
+              <span class="text-lg">{{ t(item.labelKey) }}</span>
             </button>
 
             <!-- Separator -->
@@ -116,13 +130,23 @@
               class="h-px bg-gradient-to-r from-transparent via-gray/20 to-transparent my-3"
             ></div>
 
+            <!-- Language toggle (Mobile) -->
+            <button
+              type="button"
+              @click="toggleLocale"
+              class="flex items-center justify-center gap-3 px-5 py-4 rounded-xl text-[15px] font-semibold text-blue bg-blue/10 border border-blue/20 hover:bg-blue/20 transition cursor-pointer"
+            >
+              <span class="uppercase">{{ otherLocale }}</span>
+              <span>{{ t("header.switchLang") }}</span>
+            </button>
+
             <!-- CV Download Button (Mobile) -->
             <a
               href="/CV - Félix BERGER.pdf"
               download
               class="flex items-center justify-center gap-3 px-5 py-4 rounded-xl text-[15px] font-semibold text-white bg-gradient-to-r from-pink to-pink-light shadow-lg hover:scale-105 transition transform"
             >
-              <span>Télécharger mon CV</span>
+              <span>{{ t("header.downloadCv") }}</span>
             </a>
           </div>
         </div>
@@ -132,18 +156,28 @@
 </template>
 
 <script setup>
-import { ref, onMounted, onUnmounted } from "vue";
+import { ref, computed, onMounted, onUnmounted } from "vue";
 
 const emit = defineEmits(["scroll-to"]);
+
+const { t, locale, setLocale } = useI18n();
+const localePath = useLocalePath();
 
 const isOpen = ref(false);
 const scrolled = ref(false);
 
 const navItems = [
-  { id: "projets", label: "Projets" },
-  { id: "parcours", label: "Parcours" },
-  { id: "skills", label: "Compétences" },
+  { id: "projets", labelKey: "nav.projects" },
+  { id: "parcours", labelKey: "nav.career" },
+  { id: "skills", labelKey: "nav.skills" },
 ];
+
+const otherLocale = computed(() => (locale.value === "fr" ? "en" : "fr"));
+
+function toggleLocale() {
+  isOpen.value = false;
+  setLocale(otherLocale.value);
+}
 
 function toggleMenu() {
   isOpen.value = !isOpen.value;

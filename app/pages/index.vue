@@ -7,6 +7,10 @@
           <HeroContactBar />
         </template>
 
+        <template #stats>
+          <HeroStats />
+        </template>
+
         <template #description>
           <HeroDescription />
         </template>
@@ -14,58 +18,38 @@
         <template #skills>
           <HeroSkills />
         </template>
+
+        <template #cta-buttons>
+          <a
+            href="mailto:fb.felixberger@gmail.com"
+            class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full text-sm font-semibold text-white bg-gradient-to-r from-blue to-blue-light shadow-md hover:shadow-lg hover:scale-105 transition-all duration-300"
+          >
+            {{ t("hero.cta.contact") }}
+          </a>
+          <a
+            href="/CV - Félix BERGER.pdf"
+            download
+            class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full text-sm font-semibold text-blue bg-blue/10 border border-blue/20 hover:bg-blue/20 hover:scale-105 transition-all duration-300"
+          >
+            {{ t("hero.cta.cv") }}
+          </a>
+        </template>
       </HeroSection>
 
       <section id="projets">
         <Projects>
-          <!-- Project Fondio (featured) -->
           <ProjectCard
-            featured
-            image="/img/fondio.png"
-            alt="Fondio"
-            title="Vous souhaitez mener un projet et avez besoin de conseils ? Découvrez Fondio"
-            href="https://fondio.felixberger.fr/"
-            :ariaLabel="'Ouvrir Fondio'"
-            :tags="['Next.js', 'React', 'Supabase', 'Ollama', 'Mistral', 'Qwen', 'Llama']"
-          >
-            Vos conseillers IA spécialisés, <b>100% confidentiels</b> car peuvent tourner en local sur nos serveurs.
-            Stratégie, finance, lancement, reconversion&nbsp;: des sessions
-            structurées avec livrables et mode challenger. Gestion de vos projets avec Kanban intégré et suivi de l'avancement.
-          </ProjectCard>
-
-          <!-- Project Simulator -->
-          <ProjectCard
-            image="/img/project1.png"
-            alt="Projet A"
-            title="Dev, votre salaire est-il aligné avec le marché ?"
-            href="https://simulateur.felixberger.fr/"
-            :ariaLabel="'Ouvrir le simulateur'"
-            :tags="['Next.js', 'Node.js', 'NestJS', 'TensorFlow']"
-          >
-            Découvrez en quelques secondes si votre rémunération correspond aux
-            standards actuels grâce à un <b>simulateur</b> basé sur plus de 500
-            salaires analysés via du machine learning.
-          </ProjectCard>
-
-          <!-- Project Dashboard -->
-          <ProjectCard
-            image="/img/project2.png"
-            alt="Projet B"
-            title="Dev, quel salaire en France ?"
-            href="https://salaires.felixberger.fr/"
-            :ariaLabel="'Ouvrir le dashboard salaires'"
-            :tags="['Angular', 'Node.js', 'NestJS']"
-          >
-            Consultez ce tableau de bord et découvrez les salaires des
-            développeurs de votre région. Données extraites de
-            <a
-              href="https://salaires.dev"
-              target="_blank"
-              rel="noopener"
-              class="text-blue font-medium hover:underline"
-              >salaires.dev</a
-            >.
-          </ProjectCard>
+            v-for="p in projects"
+            :key="p.id"
+            :featured="p.featured"
+            :image="p.image"
+            :alt="t(`projects.${p.id}.title`)"
+            :title="t(`projects.${p.id}.title`)"
+            :description="t(`projects.${p.id}.desc`)"
+            :href="p.href"
+            :aria-label="t(`projects.${p.id}.aria`)"
+            :tags="p.tags"
+          />
         </Projects>
       </section>
 
@@ -82,9 +66,9 @@
                 <div
                   class="w-10 h-10 border-4 border-blue/30 border-t-blue rounded-full animate-spin"
                 ></div>
-                <span class="text-gray-dark/60 font-medium"
-                  >Chargement du parcours...</span
-                >
+                <span class="text-gray-dark/60 font-medium">{{
+                  t("career.loading")
+                }}</span>
               </div>
             </div>
           </template>
@@ -94,48 +78,11 @@
       <section id="skills">
         <Skills>
           <CompetenceCard
-            title="Pilotage & Management"
-            :tags="['Scrum', 'Jira', 'Team Lead', 'UX/UI', 'Freelance']"
-            :bullets="[
-              `Lancement d'un produit SaaS : de la roadmap à la mise en production`,
-              `Pilotage d'un projet freelance (Kiweeto) : architecture y compris encadrement et gestion de projet`,
-              `Pilotage d'une refonte logicielle avec un partenaire UX/UI`,
-              `Structuration et pilotage d'une équipe IT en mode agile`,
-            ]"
-          />
-
-          <CompetenceCard
-            title="Architecture & Process"
-            :tags="['Architecture', 'Qualité', 'Orchestration']"
-            :bullets="[
-              `Mise en place d'une architecture microservices`,
-              `Élaboration d'un Plan de Continuité d'Activité (PCA)`,
-              `Modélisation d'une cartographie du SI`,
-              `Mise en place d'une CI/CD, de processus de déploiement, de code review…`,
-              `Orchestration de conteneurs via Docker et CapRover`,
-            ]"
-          />
-
-          <CompetenceCard
-            title="Stack technique"
-            :tags="[
-              'TypeScript',
-              'Node',
-              'React',
-              'Next.js',
-              'NestJS',
-              'Supabase',
-              'Firebase',
-              'Socket.io',
-              'SQL',
-              'Angular',
-            ]"
-            :bullets="[
-              `Refonte de l'API et de l'UX/UI d'une application existante utilisée par plus de 200 clients (3 000 utilisateurs)`,
-              `Création d'une application web professionnelle from scratch utilisée par plus de 200 utilisateurs`,
-              `Développement d'une application web complexe (Kiweeto) : Next.js, Supabase, Socket.io`,
-              `Mise en place d'une API complète avec authentification et tests`,
-            ]"
+            v-for="s in skills"
+            :key="s.id"
+            :title="t(`skills.${s.id}.title`)"
+            :tags="s.tags"
+            :bullets="skillBullets(s.id)"
           />
         </Skills>
       </section>
@@ -152,7 +99,7 @@
             © {{ new Date().getFullYear() }} —
             <span class="text-blue font-semibold">Félix Berger</span>
           </p>
-          <p class="text-sm text-gray/60 mt-2">Fait avec passion à Lyon</p>
+          <p class="text-sm text-gray/60 mt-2">{{ t("footer.tagline") }}</p>
         </div>
       </footer>
     </main>
@@ -160,7 +107,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted, onUnmounted, defineAsyncComponent } from "vue";
+import { ref, onMounted, defineAsyncComponent } from "vue";
 import Header from "../components/Header.vue";
 import HeroSection from "../components/intro/IntroSection.vue";
 import Projects from "../components/project/Projects.vue";
@@ -168,12 +115,80 @@ import Skills from "../components/skill/Skills.vue";
 import HeroContactBar from "../components/intro/IntroContactBar.vue";
 import HeroDescription from "../components/intro/IntroDescription.vue";
 import HeroSkills from "../components/intro/IntroSkills.vue";
+import HeroStats from "../components/intro/IntroStats.vue";
 import ProjectCard from "../components/project/ProjectCard.vue";
 import CompetenceCard from "../components/skill/SkillCard.vue";
+import { projects } from "../data/projects";
+import { skills } from "../data/skills";
 
 const CareerFlowLazy = defineAsyncComponent(
   () => import("../components/flow/CareerFlow.vue"),
 );
+
+const { t, tm, rt, locale } = useI18n();
+
+function skillBullets(id: string): string[] {
+  return (tm(`skills.${id}.bullets`) as unknown[]).map((b) => rt(b as never));
+}
+
+// --- SEO & social sharing ---
+const siteUrl = "https://www.felixberger.fr";
+const ogImage = `${siteUrl}/og-image.png`;
+
+useSeoMeta({
+  title: () => t("seo.title"),
+  description: () => t("seo.description"),
+  ogTitle: () => t("seo.title"),
+  ogDescription: () => t("seo.description"),
+  ogType: "website",
+  ogUrl: () => (locale.value === "fr" ? siteUrl : `${siteUrl}/en`),
+  ogImage: ogImage,
+  ogLocale: () => (locale.value === "fr" ? "fr_FR" : "en_US"),
+  ogLocaleAlternate: () => (locale.value === "fr" ? "en_US" : "fr_FR"),
+  twitterCard: "summary_large_image",
+  twitterTitle: () => t("seo.title"),
+  twitterDescription: () => t("seo.description"),
+  twitterImage: ogImage,
+});
+
+// i18n SEO: <html lang>, canonical + hreflang alternates, og:url, og:locale
+const localeHead = useLocaleHead({ seo: true });
+useHead(() => ({
+  htmlAttrs: localeHead.value.htmlAttrs,
+  link: [
+    ...(localeHead.value.link ?? []),
+    {
+      rel: "canonical",
+      href: locale.value === "fr" ? siteUrl : `${siteUrl}/en`,
+    },
+  ],
+  meta: localeHead.value.meta,
+}));
+
+useHead({
+  script: [
+    {
+      type: "application/ld+json",
+      innerHTML: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "Person",
+        name: "Félix Berger",
+        jobTitle: "Chef de projet IT & Développeur Full-Stack",
+        url: siteUrl,
+        email: "fb.felixberger@gmail.com",
+        sameAs: [
+          "https://www.linkedin.com/in/felix-berger/",
+          "https://github.com/FelixB69",
+        ],
+        address: {
+          "@type": "PostalAddress",
+          addressLocality: "Lyon",
+          addressCountry: "FR",
+        },
+      }),
+    },
+  ],
+});
 
 const flowContainer = ref<HTMLElement | null>(null);
 const showFlow = ref(false);
@@ -193,21 +208,6 @@ onMounted(() => {
     }, preloadDelay);
   }
 });
-
-function smoothScrollTo(selector: string) {
-  const el = document.querySelector(selector);
-  if (el) el.scrollIntoView({ behavior: "smooth" });
-}
-
-function onScrollToProjets(e: Event) {
-  e.preventDefault();
-  smoothScrollTo("#projets");
-}
-
-function onScrollToCompetences(e: Event) {
-  e.preventDefault();
-  smoothScrollTo("#competences");
-}
 
 const scrollToSection = (id: string) => {
   const el = document.getElementById(id);

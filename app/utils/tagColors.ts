@@ -5,12 +5,17 @@ export const getTagColorClass = (tag: string): string => {
   if (
     lower.includes("scrum") ||
     lower.includes("jira") ||
+    lower.includes("confluence") ||
     lower.includes("team") ||
     lower.includes("lead") ||
     lower.includes("freelance") ||
     lower.includes("pilotage") ||
     lower.includes("management") ||
+    lower.includes("okr") ||
+    lower.includes("roadmap") ||
     lower.includes("full-stack") ||
+    lower.includes("saas") ||
+    lower.includes("figma") ||
     lower.includes("ux") ||
     lower.includes("ui")
   ) {

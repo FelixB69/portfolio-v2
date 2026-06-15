@@ -27,7 +27,7 @@
           ></div>
         </div>
         <h2 class="text-3xl md:text-4xl font-bold gradient-text pb-1">
-          Mes compétences
+          {{ t("sections.skillsTitle") }}
         </h2>
       </div>
 
@@ -38,6 +38,10 @@
     </div>
   </section>
 </template>
+
+<script setup lang="ts">
+const { t } = useI18n();
+</script>
 
 <style scoped>
 @keyframes fade-in-up {

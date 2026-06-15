@@ -1,0 +1,151 @@
+{
+  "nav": {
+    "projects": "Projets",
+    "career": "Parcours",
+    "skills": "Compétences"
+  },
+  "header": {
+    "downloadCv": "Télécharger mon CV",
+    "openMenu": "Ouvrir le menu",
+    "closeMenu": "Fermer le menu",
+    "home": "Accueil",
+    "switchLang": "Switch to English"
+  },
+  "hero": {
+    "roles": {
+      "projectLead": "Chef de projet IT",
+      "fullstack": "Développeur Full-stack",
+      "lead": "Lead Developer"
+    },
+    "tagline": "Profil hybride métier et technique, je pilote le développement de logiciels SaaS du cadrage à la production.",
+    "available": "Disponible à Paris dès octobre 2026",
+    "bio": {
+      "p1": "J'ai construit mon parcours en 2 temps : près de <b>4 ans côté métier</b> à piloter des projets digitaux, puis <b>4 ans en développement full-stack</b>, dont <b>2,5 ans à la tête d'une équipe de 5 personnes</b>.",
+      "p2": "Aujourd'hui, je pilote des logiciels et applications web de bout en bout, en faisant le lien entre les enjeux métier, les utilisateurs et les équipes techniques. Cette double casquette me permet d'allier conception fonctionnelle et expertise technique concrète (TypeScript, React, Node), en environnement Agile Scrum."
+    },
+    "skills": ["Full-Stack", "TypeScript", "Node.js", "React / Next", "NestJS"],
+    "cta": {
+      "contact": "Me contacter",
+      "cv": "Télécharger le CV"
+    },
+    "stats": {
+      "experience": { "value": "8 ans", "label": "d'expérience" },
+      "users": { "value": "2 000+", "label": "utilisateurs (plateforme)" },
+      "team": { "value": "5", "label": "personnes managées" },
+      "projects": { "value": "5", "label": "projets en production" }
+    }
+  },
+  "sections": {
+    "projectsTitle": "Mes projets personnels",
+    "careerTitle": "Mon parcours",
+    "skillsTitle": "Mes compétences"
+  },
+  "projects": {
+    "viewProject": "Voir le projet →",
+    "fondio": {
+      "title": "Vous souhaitez mener un projet et avez besoin de conseils ? Découvrez Fondio",
+      "desc": "Vos conseillers IA spécialisés, <b>100 % confidentiels</b> car capables de tourner en local sur nos serveurs. Stratégie, finance, lancement, reconversion : des sessions structurées avec livrables et mode challenger. Gestion de vos projets avec Kanban intégré et suivi de l'avancement.",
+      "aria": "Ouvrir Fondio"
+    },
+    "simulator": {
+      "title": "Dev, votre salaire est-il aligné avec le marché ?",
+      "desc": "Découvrez en quelques secondes si votre rémunération correspond aux standards actuels grâce à un <b>simulateur</b> basé sur plus de 500 salaires analysés via du machine learning.",
+      "aria": "Ouvrir le simulateur"
+    },
+    "dashboard": {
+      "title": "Dev, quel salaire en France ?",
+      "desc": "Consultez ce tableau de bord et découvrez les salaires des développeurs de votre région. Données extraites de <a href=\"https://salaires.dev\" target=\"_blank\" rel=\"noopener\" class=\"text-blue font-medium hover:underline\">salaires.dev</a>.",
+      "aria": "Ouvrir le dashboard salaires"
+    }
+  },
+  "skills": {
+    "management": {
+      "title": "Pilotage & management",
+      "bullets": [
+        "Structuration et pilotage d'une <b>équipe de 5 personnes</b> : recrutement IT, rituels Agile Scrum et montée en compétences",
+        "Définition de la roadmap et priorisation via la méthode <b>OKR</b> : <b>10 à 15 fonctionnalités majeures</b> et 15 à 20 évolutions par semestre",
+        "Recueil des besoins, animation d'ateliers et relation client au quotidien",
+        "Pilotage de projets de bout en bout, du cadrage à la mise en production"
+      ]
+    },
+    "product": {
+      "title": "Conception & produit",
+      "bullets": [
+        "Analyse fonctionnelle, rédaction de spécifications et modélisation applicative",
+        "Lancement de produits SaaS et refonte UX/UI (<b>−80 % de temps de chargement</b>, 2 000+ utilisateurs)",
+        "Conception d'architectures microservices et Plan de Continuité d'Activité (<b>99,3 % de disponibilité</b>)",
+        "Intégration d'<b>agents IA</b> et de LLM en application métier (Ollama, Claude, Cursor, Copilot)"
+      ]
+    },
+    "dev": {
+      "title": "Développement",
+      "bullets": [
+        "<b>Front</b> : React, Next.js, TypeScript, Redux, Zustand, Angular, Tailwind",
+        "<b>Back</b> : Node.js, NestJS, API REST &amp; GraphQL",
+        "<b>Bases de données</b> : MongoDB, MariaDB, Firebase, Supabase",
+        "<b>DevOps</b> : Git, Docker, CI/CD, tests (Jest, Cypress), <b>−50 à 60 % de bugs</b> en production"
+      ]
+    }
+  },
+  "career": {
+    "hint": "Vous pouvez déplacer le plan, les cartes « expérience » et la caméra en maintenant le clic gauche (ou le pad) tout en déplaçant la souris ou le doigt.",
+    "loading": "Chargement du parcours...",
+    "nodes": {
+      "master": {
+        "title": "Master Management de Projet",
+        "description": "IAE Saint-Étienne, mention TB (Bac +5)",
+        "date": "2016-2018"
+      },
+      "cda": {
+        "title": "Concepteur Développeur d'Applications",
+        "description": "Wild Code School, titre RNCP niveau 6",
+        "date": "Fév 2022 - Sept 2023"
+      },
+      "astree": {
+        "title": "Chargé de projet Marketing Digital",
+        "description": "Astrée Software, 60 à 80 leads qualifiés/mois",
+        "date": "Sept 2017 - Déc 2021"
+      },
+      "entendsmoi": {
+        "title": "Développeur Front-end",
+        "description": "Entends-Moi, React / Redux / Node.js",
+        "date": "Sept 2022 - Sept 2023"
+      },
+      "likewattDev": {
+        "title": "Développeur Full-Stack",
+        "description": "Likewatt, React / Node / NestJS",
+        "date": "Sept 2023 - Mai 2024"
+      },
+      "likewattLead": {
+        "title": "Responsable du développement IT",
+        "description": "Likewatt, management d'une équipe de 5",
+        "date": "Mai 2024 - Aujourd'hui"
+      },
+      "kiweeto": {
+        "title": "Lead Dev & Chef de projet (Freelance)",
+        "description": "Kiweeto, Next.js, Supabase, Socket.io, Azure",
+        "date": "Nov 2025 - Aujourd'hui"
+      }
+    },
+    "projects": {
+      "astreeSeo": "Campagne SEO/SEA",
+      "astreeSite": "Création de site",
+      "astreeAutomation": "Marketing automation",
+      "entendsmoiPdf": "Export PDF",
+      "entendsmoiStore": "State management Redux",
+      "likewattRefonte": "Refonte SaaS (2 000+ users)",
+      "likewattLoad": "−80 % temps de chargement",
+      "likewattPca": "PCA (99,3 % dispo)",
+      "kiweetoMvp": "MVP en 3-4 mois",
+      "kiweetoSupabase": "Architecture Supabase",
+      "kiweetoSocket": "Temps réel Socket.io"
+    }
+  },
+  "footer": {
+    "tagline": "Fait avec passion à Lyon"
+  },
+  "seo": {
+    "title": "Félix Berger | Chef de projet IT & Développeur Full-Stack",
+    "description": "Chef de projet technique au profil hybride : pilotage de produits SaaS de bout en bout, expertise full-stack (TypeScript, React, Node) et intégration de l'IA. Découvrez mes projets et mon parcours."
+  }
+}

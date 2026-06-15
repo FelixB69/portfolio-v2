@@ -1,0 +1,151 @@
+{
+  "nav": {
+    "projects": "Projects",
+    "career": "Career",
+    "skills": "Skills"
+  },
+  "header": {
+    "downloadCv": "Download my résumé",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "home": "Home",
+    "switchLang": "Passer en français"
+  },
+  "hero": {
+    "roles": {
+      "projectLead": "IT Project Lead",
+      "fullstack": "Full-Stack Developer",
+      "lead": "Lead Developer"
+    },
+    "tagline": "Hybrid business and engineering profile, I drive SaaS products from scoping to production.",
+    "available": "Available in Paris from October 2026",
+    "bio": {
+      "p1": "I built my career in two phases: nearly <b>4 years on the business side</b> driving digital projects, then <b>4 years in full-stack development</b>, including <b>2.5 years leading a team of 5</b>.",
+      "p2": "Today I drive software and web applications end to end, bridging business needs, users and technical teams. This dual background lets me combine functional design and hands-on technical expertise (TypeScript, React, Node), within Agile Scrum environments."
+    },
+    "skills": ["Full-Stack", "TypeScript", "Node.js", "React / Next", "NestJS"],
+    "cta": {
+      "contact": "Get in touch",
+      "cv": "Download résumé"
+    },
+    "stats": {
+      "experience": { "value": "8 yrs", "label": "of experience" },
+      "users": { "value": "2,000+", "label": "users (platform)" },
+      "team": { "value": "5", "label": "people managed" },
+      "projects": { "value": "5", "label": "projects in production" }
+    }
+  },
+  "sections": {
+    "projectsTitle": "My personal projects",
+    "careerTitle": "My career",
+    "skillsTitle": "My skills"
+  },
+  "projects": {
+    "viewProject": "View project →",
+    "fondio": {
+      "title": "Leading a project and need guidance? Discover Fondio",
+      "desc": "Your specialized AI advisors, <b>100% private</b> as they can run locally on our own servers. Strategy, finance, launch, career change: structured sessions with deliverables and a challenger mode. Manage your projects with a built-in Kanban and progress tracking.",
+      "aria": "Open Fondio"
+    },
+    "simulator": {
+      "title": "Dev, is your salary aligned with the market?",
+      "desc": "Find out in seconds whether your compensation matches current standards, thanks to a <b>simulator</b> based on over 500 salaries analyzed with machine learning.",
+      "aria": "Open the simulator"
+    },
+    "dashboard": {
+      "title": "Dev, what salary in France?",
+      "desc": "Browse this dashboard and discover developer salaries in your region. Data sourced from <a href=\"https://salaires.dev\" target=\"_blank\" rel=\"noopener\" class=\"text-blue font-medium hover:underline\">salaires.dev</a>.",
+      "aria": "Open the salaries dashboard"
+    }
+  },
+  "skills": {
+    "management": {
+      "title": "Leadership & management",
+      "bullets": [
+        "Built and led a <b>team of 5</b>: IT recruitment, Agile Scrum rituals and skills development",
+        "Roadmap definition and prioritization via the <b>OKR</b> method: <b>10–15 major features</b> and 15–20 improvements per half-year",
+        "Requirements gathering, workshop facilitation and day-to-day client relations",
+        "End-to-end project delivery, from scoping to production"
+      ]
+    },
+    "product": {
+      "title": "Design & product",
+      "bullets": [
+        "Functional analysis, specification writing and application modeling",
+        "SaaS product launches and UX/UI redesigns (<b>−80% load time</b>, 2,000+ users)",
+        "Microservices architecture design and a Business Continuity Plan (<b>99.3% uptime</b>)",
+        "Integration of <b>AI agents</b> and LLMs into business applications (Ollama, Claude, Cursor, Copilot)"
+      ]
+    },
+    "dev": {
+      "title": "Development",
+      "bullets": [
+        "<b>Front</b>: React, Next.js, TypeScript, Redux, Zustand, Angular, Tailwind",
+        "<b>Back</b>: Node.js, NestJS, REST & GraphQL APIs",
+        "<b>Databases</b>: MongoDB, MariaDB, Firebase, Supabase",
+        "<b>DevOps</b>: Git, Docker, CI/CD, testing (Jest, Cypress), <b>−50 to 60% fewer bugs</b> in production"
+      ]
+    }
+  },
+  "career": {
+    "hint": "You can drag the canvas, the \"experience\" cards and the camera by holding the left click (or trackpad) while moving the mouse or your finger.",
+    "loading": "Loading career...",
+    "nodes": {
+      "master": {
+        "title": "Master's in Project Management",
+        "description": "IAE Saint-Étienne, with high honors (Master's)",
+        "date": "2016-2018"
+      },
+      "cda": {
+        "title": "Application Designer & Developer",
+        "description": "Wild Code School, RNCP level 6",
+        "date": "Feb 2022 - Sep 2023"
+      },
+      "astree": {
+        "title": "Digital Marketing Project Manager",
+        "description": "Astrée Software, 60 to 80 qualified leads/month",
+        "date": "Sep 2017 - Dec 2021"
+      },
+      "entendsmoi": {
+        "title": "Front-end Developer",
+        "description": "Entends-Moi, React / Redux / Node.js",
+        "date": "Sep 2022 - Sep 2023"
+      },
+      "likewattDev": {
+        "title": "Full-Stack Developer",
+        "description": "Likewatt, React / Node / NestJS",
+        "date": "Sep 2023 - May 2024"
+      },
+      "likewattLead": {
+        "title": "Head of IT Development",
+        "description": "Likewatt, leading a team of 5",
+        "date": "May 2024 - Present"
+      },
+      "kiweeto": {
+        "title": "Lead Dev & Project Manager (Freelance)",
+        "description": "Kiweeto, Next.js, Supabase, Socket.io, Azure",
+        "date": "Nov 2025 - Present"
+      }
+    },
+    "projects": {
+      "astreeSeo": "SEO/SEA campaign",
+      "astreeSite": "Website build",
+      "astreeAutomation": "Marketing automation",
+      "entendsmoiPdf": "PDF export",
+      "entendsmoiStore": "Redux state management",
+      "likewattRefonte": "SaaS redesign (2,000+ users)",
+      "likewattLoad": "−80% load time",
+      "likewattPca": "BCP (99.3% uptime)",
+      "kiweetoMvp": "MVP in 3-4 months",
+      "kiweetoSupabase": "Supabase architecture",
+      "kiweetoSocket": "Real-time Socket.io"
+    }
+  },
+  "footer": {
+    "tagline": "Crafted with passion in Lyon"
+  },
+  "seo": {
+    "title": "Félix Berger | IT Project Lead & Full-Stack Developer",
+    "description": "Technical project lead with a hybrid profile: end-to-end SaaS product delivery, full-stack expertise (TypeScript, React, Node) and AI integration. Explore my projects and career."
+  }
+}

@@ -25,7 +25,7 @@
         <span
           class="inline-flex items-center gap-2 px-4 py-2 bg-white/95 backdrop-blur-sm rounded-full text-sm font-medium text-gray-dark shadow-lg"
         >
-          Voir le projet →
+          {{ t("projects.viewProject") }}
         </span>
       </div>
     </div>
@@ -46,9 +46,8 @@
       <p
         class="text-gray leading-relaxed mb-5"
         :class="featured ? 'text-base md:text-lg' : 'text-base'"
-      >
-        <slot />
-      </p>
+        v-html="description"
+      ></p>
 
       <!-- Tags -->
       <div class="flex flex-wrap gap-2">
@@ -86,11 +85,14 @@ const props = defineProps<{
   alt?: string;
   title: string;
   href: string;
+  description?: string;
   ariaLabel?: string;
   tags?: string[] | string;
   featured?: boolean;
   badge?: string;
 }>();
+
+const { t } = useI18n();
 
 const normalizedTags = Array.isArray(props.tags)
   ? props.tags

@@ -34,41 +34,52 @@
           >
             Félix Berger
           </h1>
-
+        <!-- Availability badge -->
+          <div class="flex justify-center mb-5">
+            <span
+              class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-green/10 text-green-dark border border-green/20 text-sm font-semibold"
+            >
+              <span
+                class="w-2 h-2 rounded-full bg-green animate-pulse-soft"
+              ></span>
+              {{ t("hero.available") }}
+            </span>
+          </div>
           <!-- Role -->
-          <div class="flex flex-wrap justify-center gap-3 mb-5">
+          <div class="flex flex-wrap justify-center gap-3 mb-4">
             <span
+              v-for="role in roles"
+              :key="role"
               class="px-5 py-2 bg-blue/10 text-blue border border-blue/20 shadow-sm backdrop-blur-md rounded-full font-bold text-base transition-all duration-300 hover:scale-105 hover:shadow-md cursor-default"
             >
-              Team lead
-            </span>
-            <span
-              class="px-5 py-2 bg-blue/10 text-blue border border-blue/20 shadow-sm backdrop-blur-md rounded-full font-bold text-base transition-all duration-300 hover:scale-105 hover:shadow-md cursor-default"
-            >
-              Développeur Full-stack
-            </span>
-            <span
-              class="px-5 py-2 bg-blue/10 text-blue border border-blue/20 shadow-sm backdrop-blur-md rounded-full font-bold text-base transition-all duration-300 hover:scale-105 hover:shadow-md cursor-default"
-            >
-              Chef de projet technique
-            </span>
-            <span
-              class="px-5 py-2 bg-blue/10 text-blue border border-blue/20 shadow-sm backdrop-blur-md rounded-full font-bold text-base transition-all duration-300 hover:scale-105 hover:shadow-md cursor-default"
-            >
-              Chef de produit IT
+              {{ role }}
             </span>
           </div>
 
-          <!-- Description -->
-          <slot name="description"></slot>
+          <!-- Stats -->
+          <div class="mb-6">
+            <slot name="stats"></slot>
+          </div>
 
           <!-- Skills -->
           <div class="mt-5 flex flex-wrap justify-center gap-3 mb-4">
             <slot name="skills"></slot>
           </div>
+          <!-- Tagline -->
+          <p
+            class="max-w-2xl mx-auto text-lg md:text-lg font-bold text-blue mb-4"
+          >
+            {{ t("hero.tagline") }}
+          </p>
+
+          <!-- Description -->
+          <slot name="description"></slot>
+  
 
           <!-- CTA Buttons -->
-          <div class="flex items-center justify-center gap-4 mt-5">
+          <div
+            class="cta-buttons flex flex-wrap items-center justify-center gap-4 mt-6"
+          >
             <slot name="cta-buttons"></slot>
           </div>
         </div>
@@ -76,6 +87,18 @@
     </div>
   </section>
 </template>
+
+<script setup lang="ts">
+import { computed } from "vue";
+
+const { t } = useI18n();
+
+const roles = computed(() => [
+  t("hero.roles.projectLead"),
+  t("hero.roles.fullstack"),
+  t("hero.roles.lead"),
+]);
+</script>
 
 <style scoped>
 @keyframes fade-in-up {

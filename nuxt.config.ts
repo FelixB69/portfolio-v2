@@ -55,5 +55,22 @@ export default defineNuxtConfig({
       "@tailwindcss/postcss": {},
     },
   },
-  modules: ["@nuxt/ui"],
+  modules: ["@nuxt/ui", "@nuxtjs/i18n"],
+  i18n: {
+    defaultLocale: "fr",
+    strategy: "prefix_except_default",
+    baseUrl: "https://www.felixberger.fr",
+    // Several messages embed inline HTML (<b>, <a>) rendered via v-html.
+    compilation: { strictMessage: false, escapeHtml: false },
+    bundle: { optimizeTranslationDirective: false },
+    locales: [
+      { code: "fr", language: "fr-FR", name: "Français", file: "fr.json" },
+      { code: "en", language: "en-US", name: "English", file: "en.json" },
+    ],
+    detectBrowserLanguage: {
+      useCookie: true,
+      cookieKey: "i18n_redirected",
+      redirectOn: "root",
+    },
+  },
 });
